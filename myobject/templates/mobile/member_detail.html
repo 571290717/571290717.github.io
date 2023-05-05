@@ -1,0 +1,43 @@
+
+{% extends 'mobile/base.html' %}
+{% load static from staticfiles %}
+
+{% block mainbody %}
+    <!--头部-->
+    <header>
+        <div class="header">
+            <h1>订单详情</h1>
+            <a href="{% url 'mobile_member_orders' %}" class="return"><i></i></a>
+        </div>
+    </header>
+
+    <!--内容区-->
+    <article class="main-container">
+
+        <!--订单编号-->
+        <div class="memberDetailheader line">订单号：{{order.id}} ({{order.statusinfo}})</div>
+
+        <!--购买商品-->
+        <div class="list-content cartlist order-Pro memberDetaillist">
+            <ul class="line-li">
+                {% for vo in order.plist %}
+                <li>
+                    <a href="#"><div class="pro-img">
+                        <img src="{% static 'uploads/product/' %}{{vo.product.cover_pic}}" alt=""></div></a>
+                    <div class="pro-con"><h3>{{ vo.product_name }}</h3><b>￥{{ vo.price }}</b><p>&times;{{ vo.quantity }}</p></div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!--价格、下单时间-->
+        <div class="memberDetailPrice line">
+            <p>共计：{{order.plist|length}} 个 金额：￥{{ order.money }}</p>
+            <p style="font-size:13px;">
+                下单时间：{{ order.create_at|date:'Y-m-d H:i' }}<br/>
+                {{ order.shopname }}
+            </p>
+        </div>
+
+    </article>
+{% endblock %}

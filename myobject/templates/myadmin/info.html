@@ -1,0 +1,16 @@
+{% extends "myadmin/base.html" %}
+
+{% block main_body %}                
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h4>
+        信息提示:
+      </h4>
+    </section>
+
+    <div class="pad margin no-print">
+      <div class="callout callout-info" style="margin-bottom: 0!important;padding-left: 50px">
+        <h3><i class="fa fa-exclamation-triangle"></i>  &nbsp; {{ info }}</h3>
+      </div>
+    </div>
+{% endblock %}

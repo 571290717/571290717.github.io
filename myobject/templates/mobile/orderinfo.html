@@ -1,0 +1,20 @@
+{% extends 'mobile/base.html' %}
+
+{% block mainbody %}
+    <!--头部-->
+    <header>
+        <div class="header">
+            <h1>订单处理</h1>
+            <a href="javascript:window.history.back();" class="return"><i></i></a>
+        </div>
+    </header>
+
+    <!--内容区-->
+    <article class="main-container loginContent">
+
+        <h3>下订单成功！</h3>
+        <h4>订单号：{{order.id}} &nbsp; &nbsp; 消费金额：{{order.money}}</h4>
+
+        <div class="button"><button onclick="location.href='{% url 'mobile_index' %}'">继续购物</button></div>  
+    </article>
+{% endblock %}

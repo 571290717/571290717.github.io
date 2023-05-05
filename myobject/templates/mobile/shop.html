@@ -1,0 +1,32 @@
+{% extends 'mobile/base.html' %}
+{% load static from staticfiles %}
+
+{% block mainbody %}
+<!--头部-->
+<header>
+	<div class="header">
+		<h1>切换店铺</h1>
+		<a href="{% url 'mobile_index' %}" class="return"><i></i></a>
+	</div>
+</header>
+
+<!--内容区-->
+<article class="main-container">
+	
+	<!--产品-->
+	<div class="list-content cartlist order-Pro">
+		<ul>
+			{% for vo in shoplist %}
+			<li class="line select">
+				<a href="{% url 'mobile_selectshop' %}?sid={{vo.id}}">
+				<div class="pro-img"><img src="/static/uploads/shop/{{ vo.cover_pic }}" alt=""></div>
+				<div class="pro-con"><h3>{{vo.name}}</h3><p>电话：{{vo.phone}}</p><p>{{vo.address}}</p></div>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	
+</article>
+{% endblock %}
+

@@ -1,0 +1,84 @@
+{% extends 'mobile/base.html' %}
+{% load static from staticfiles %}
+
+{% block mainbody %}
+	<!--头部-->
+	<header>
+		<div class="header">
+			<h1>提交订单</h1>
+			<a href="javascript:window.history.back();" class="return"><i></i></a>
+		</div>
+	</header>
+	
+	<!--内容区-->
+	<article class="main-container add-product">
+
+		<!--产品-->
+		<div class="list-content cartlist order-Pro">
+			<ul>
+				{% for vo in request.session.cartlist.values %}
+				<li class="line">
+					<a href="#"><div class="pro-img"><img src="{% static 'uploads/product/' %}{{vo.cover_pic}}" alt=""></div></a>
+					<div class="pro-con"><h3>{{vo.name}}</h3><b>￥{{ vo.price }}</b>&times;{{ vo.num }}</div>
+				</li>
+				{% endfor %}
+				<!--li class="line">
+					<a href="#"><div class="pro-img"><img src="{% static 'mobile/img/img02.jpg' %}" alt=""></div></a>
+					<div class="pro-con"><h3>江西赣南脐橙</h3><b>￥49.90<s>￥69.90</s></b>&times;1</div>
+				</li>
+				<li class="line">
+					<a href="#"><div class="pro-img"><img src="{% static 'mobile/img/img04.jpg' %}" alt=""></div></a>
+					<div class="pro-con"><h3>花果山 智利蓝莓</h3><b>￥79.00<s>￥90.90</s></b>&times;1</div>
+				</li>
+				<li class="line">
+					<a href="#"><div class="pro-img"><img src="{% static 'mobile/img/img06.jpg' %}" alt=""></div></a>
+					<div class="pro-con"><h3>赣南脐橙 （箱）</h3><b>￥26.00<s>￥36.90</s></b>&times;1</div>
+				</li>
+				<li class="line">
+					<a href="#"><div class="pro-img"><img src="{% static 'mobile/img/img09.jpg' %}" alt=""></div></a>
+					<div class="pro-con"><h3>新疆阿克苏冰糖心苹果 6只/盒</h3><b>￥28.80<s>￥35.90</s></b>&times;1</div>
+				</li-->
+			</ul>
+		</div>
+			
+		
+		
+		<!--支付方式-->
+		<div class="order-Delivery line" id="orderPays">
+			<p>支付方式</p>
+			<ol class="FilterContentList">
+			</ol>
+			<div class="list">
+				<ul class="line">
+					<li class="select" bank="4"><i class="icon-alipay"></i>支付宝支付<em class="icon-correct"></em></li>
+					<li bank="1"><i class="icon-weixinpay"></i>微信支付<em class="icon-correct"></em></li>
+				</ul>
+			</div>
+		</div>
+		
+		<br><br>
+
+	</article>
+
+	<!--底部栏目-->
+	<footer>
+		<div class="button"><button onclick=" doSubmit()">提交订单</button></div>
+		<h4>实付款：¥{{ request.session.total_money }}</h4>
+	</footer>
+{% endblock %}
+
+{% block myjavascript %}
+<script type="text/javascript">
+    //支付方式上的单选按钮点击效果
+    $("ul.line li").click(function(){
+        $("ul.line li").removeClass("select");
+        $(this).addClass("select");
+    });
+
+    //执行订单提交操作函数
+    function doSubmit(){
+        bid = $("ul.line li.select").attr("bank"); //获取支付方式
+        window.location.href="{% url 'mobile_doaddorders' %}?bank="+bid;
+    }
+</script>
+{% endblock %}

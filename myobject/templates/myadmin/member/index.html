@@ -1,0 +1,95 @@
+{% extends 'myadmin/base.html' %}
+{% load static from staticfiles %}
+
+{% block main_body %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        会员管理
+        <small>订餐系统后台管理</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+        <li class="active">会员管理</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">会员信息表</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tr>
+                  <th>ID</th>
+                  <th>昵称</th>
+                  <th>头像</th>
+                  <th>联系电话</th>
+                  <th>当前状态</th>
+                  <th>添加时间</th>
+                  <th>修改时间</th>
+                  <th width="200">操作</th>
+                </tr>
+                {% for vo in memberlist %}
+                <tr>
+                  <td>{{ vo.id }}</td>
+                  <td>{{ vo.nickname }}</td>
+                  <td><img src="/static/uploads/member/{{ vo.avatar }}" width="40"/></td>
+                  <td>{{ vo.mobile }}</td>
+                  <td>
+                    {% if vo.status == 1 %}
+                      <span style="color:green">正常</span>
+                    {% elif vo.status == 2 %}
+                      <span style="color:red">禁停</span>
+                    {% elif vo.status == 9 %}
+                      <span style="color:red">已删除</span>
+                    {% else %}
+                      <span style="color:red">未知状态</span>
+                    {% endif %}
+                  </td>
+                  <td width="15%">{{ vo.create_at|date:'Y-m-d H:i:s' }}</td>
+                  <td width="15%">{{ vo.update_at|date:'Y-m-d H:i:s' }}</td>
+                  <td width="22%">
+                    <a href="#" class="btn btn-success btn-xs">
+                      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 编辑</a>
+                    <button type="button"  class="btn btn-danger btn-xs">
+                      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 删除</button>
+                  </td>
+                </tr>
+                {% endfor %}
+              </table>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+             <ul class="pagination pagination-sm no-margin pull-right">
+                <li><a href="{% url 'myadmin_member_index' pIndex|add:-1 %}">&laquo;</a></li>
+                {% for p in plist %}
+                  <li {% if p == pIndex %}class="active"{% endif %}><a href="{% url 'myadmin_member_index' p %}">{{p}}</a></li>
+                {% endfor %}
+                <li><a href="{% url 'myadmin_member_index' pIndex|add:1 %}">&raquo;</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+
+    </section>
+    <!-- /.content -->
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends 'mobile/base.html' %}
+{% load static from staticfiles %}
+
+{% block mainbody %}
+	<!--头部-->
+	<header class="search" id="search">
+		<div class="header">
+			<h1>{{ request.session.shopinfo.name }}--{{ request.session.shopinfo.shop }}</h1>
+		</div>
+		<!--通知公告/客服电话-->
+	</header>
+
+	<!--搜索内容-->
+	<div class="search-content" id="search-content">
+		<i class="icon-font"></i>
+	</div>
+
+	<!--内容区-->
+	<article class="main-container">
+		
+		<!--左侧栏目-->
+		<div class="sortNav" id="sortNav">
+			<p class="icon-sort line">分类导航</p>
+			{% for vo in categorylist %}
+				<a href="javascript:void(0);" onclick="doselectList(this,{{vo.id}})" {% if cid.id == vo.id %}class="select"{% endif %}>{{vo.name}}</a>
+			{% endfor %}
+			<!--
+			<a href="javascript:void(0);" onclick="doselectList(this,2)" class="select">盖饭</a>
+			<a href="javascript:void(0);" onclick="doselectList(this,3)">小菜</a>
+			<a href="javascript:void(0);" onclick="doselectList(this,4)">汤/饮料</a>
+			-->
+		</div>
+		
+		<!--右侧产品-->
+		<div class="sortContent line">
+			<!--产品列表-->
+			{% for key,plist in productlist %}
+			<ol class="list-content" id="list-content{{key}}" style="display:{% if cid.id == key %}block{% else %}none{% endif %};">
+				{% for vo in plist %}
+				<li class="line">
+					<a href="#">
+						<div class="pro-img"><img src="{% static 'uploads/product/' %}{{vo.cover_pic}}" alt=""></div>
+						<div class="pro-con"><h3>{{vo.name}}</h3><font>绝对超值,店长推荐</font><b>{{vo.price}}</b></div>
+					</a>
+					<a href="javascript:doCartAdd({{vo.id}})" class="list-cart"><i class="icon-cartadd"></i></a>
+				</li>
+				{% endfor %}
+			</ol>
+			{% endfor %}
+			<br><br>
+		</div>
+		
+		<!--购物车-->
+		<div class="cartContent fadeInBottom100" id="cartContent">
+			
+			<div class="LayerHeader line">
+				<button class="Del" onclick="doCartClear()"><i class="icon-delete"></i>清空</button>
+				<button class="close pl"><i class="icon-plus rot45"></i></button>
+			</div>
+			
+			<div class="cartContentList">
+				<ul class="line-li">
+					<!--li>
+						<img src="img/img01.jpg" alt=""><p>家乐都有机里脊肉 500g</p><span>¥150.00</span>
+						<div class="D-BuyNum"><button><i class="icon-reduce"></i></button><input type="number" readonly class="line" value="9"><button><i class="icon-plus"></i></button></div>
+					</li>
+					<li>
+						<img src="img/img02.jpg" alt=""><p>法国猪肋排 1kg/袋</p><span>¥150.00</span>
+						<div class="D-BuyNum"><button><i class="icon-reduce"></i></button><input type="number" class="line" value="9"><button><i class="icon-plus"></i></button></div>
+					</li>
+					<li>
+						<img src="img/img03.jpg" alt=""><p>乌拉圭进口（无骨）牛肋条 约1kg</p><span>¥150.00</span>
+						<div class="D-BuyNum"><button><i class="icon-reduce"></i></button><input type="number" class="line" value="9"><button><i class="icon-plus"></i></button></div>
+					</li-->
+				</ul>
+			</div>
+			
+			<div class="LayerFooter">
+				共计：<span>¥0.00</span>
+			</div>
+		</div>
+
+	</article>
+
+	<!--底部栏目-->
+	<menu>
+		<a href="{% url 'mobile_shop' %}"><i class="icon-selectmore"></i>切换店铺</a>
+		<!--a href="member-order.html"><i class="icon-allorders"></i>订单</a-->
+		<a href="javascript:void(0)" id="orderCart"><i class="icon-cart"><span>0</span></i>购物车</a>
+		<a href="{% url 'mobile_member_index' %}"><i class="icon-head"></i>我的</a>
+		<a><button onclick="location.href='{% url 'mobile_addorders' %}'">去结算</button></a>
+	</menu>
+	
+	<!--弹出圈圈loading-->
+	<div class="spinner" style="display:none;"><i></i></div>
+{% endblock %}
+
+
+{% block myjavascript %}
+<script type="text/javascript">
+	function doselectList(ob,m){
+		$("#sortNav a").removeClass("select");
+		$(ob).addClass("select");
+		$("ol.list-content").hide();
+		$("#list-content"+m).show();
+		return false;
+	}
+
+	//执行购物车添加操作
+	function doCartAdd(id){
+		$.ajax({
+            url: "{% url 'mobile_cart_add' %}?pid="+id,
+            type: 'get',
+            data: {},
+            dataType:'json',
+            success:function(res){
+                console.log(res.cartlist);
+                doShowCart(res.cartlist);
+            }
+        });
+	}
+
+	//清空购物车
+	function doCartClear(){
+		$.ajax({
+            url: "{% url 'mobile_cart_clear' %}",
+            type: 'get',
+            data: {},
+            dataType:'json',
+            success:function(res){
+                console.log(res.cartlist);
+                doShowCart(res.cartlist);
+            }
+        });
+	}
+
+	//重新绘制购物车内容
+	function doShowCart(cartlist){
+        var cartContent = $("#cartContent div.cartContentList ul.line-li");
+        cartContent.empty()
+        var total = 0.0;
+        for(let i in cartlist){
+            var str = "<li>";
+            str += '<img src="/static/uploads/product/'+cartlist[i].cover_pic+'" alt=""><p>'+cartlist[i].name+'</p><span>¥'+cartlist[i].price+'</span>';
+            str += '<div class="D-BuyNum"><button><i class="icon-reduce"></i></button><input type="number" readonly class="line" value="'+cartlist[i].num+'"><button><i class="icon-plus"></i></button></div>'
+            str += "</li>";
+            cartContent.append(str);
+            total += cartlist[i].price * cartlist[i].num; 
+        }
+        $("#cartContent div.LayerFooter span").html("￥"+total);
+        $("#orderCart i.icon-cart span").html(Object.keys(cartlist).length);
+    }
+
+	//当前页面首次加载时获取购物车信息并显示
+	$.ajax({
+		url: "{% url 'mobile_cart_add' %}",
+		type: 'get',
+		data: {},
+		dataType:'json',
+		success:function(res){
+			console.log(res.cartlist);
+			doShowCart(res.cartlist);
+		}
+	});
+</script>
+{% endblock %}
