@@ -23,13 +23,13 @@ repository: ShawnTeoh/matjek
 paginate: 5
 
 # MatJek specific configurations
-github_profile: "https://github.com/ShawnTeoh"
+github_profile: "https://571290717.github.io/"
 user: "John Doe"
 user_email: "john@doe.com"
 contact_url: "https://goo.gl/tVljbV"
 google_tracking_id: "UA-96359860-1"
 google_site_verification: "UA-96359860-1"
-disqus_shortname: "matjek"
+disqus_shortname: ""
 
 # Build settings
 markdown: kramdown
@@ -42,5 +42,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
 sass:
-  style: compressed
+    style: compressed
 future: true
