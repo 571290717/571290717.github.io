@@ -44,9 +44,9 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="645" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1683429030408">
+    <state x="645" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1683535923731">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="645" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1683429030408" />
+    <state x="645" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1683535923731" />
   </component>
 </project>
