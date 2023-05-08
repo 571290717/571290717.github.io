@@ -1,3 +1,8 @@
+# file1
+
+source: `{{ page.path }}`
+
+
 # GitHub Pages 快速入门
 
 ## 简介 #
