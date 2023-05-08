@@ -1,68 +1,100 @@
-# MatJek
+# jekyll-rtd-theme
 
-A responsive [Material](https://material.io/) theme based on [Materialize.css](http://materializecss.com/) for jekyll sites.
+![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
+![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
+
+Just another documentation theme compatible with GitHub Pages
+
+## What it does?
+
+This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
+
+- [@primer/css](https://github.com/primer/css)
+- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
+
+## Quick start
+
+```yml
+remote_theme: rundocs/jekyll-rtd-theme
+```
+
+You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
+
+## Usage
+
+Documentation that can guide how to create with Github pages, please refer to [rundocs.io](https://rundocs.io) for details
 
 ## Features
 
-* Google Analytics
-* Disqus
-* [GitHub project page](https://shawnteoh.github.io/matjek/projects/)
-* [Tags](https://shawnteoh.github.io/matjek/tags/) and [Categories](https://shawnteoh.github.io/matjek/categories/)
-* Modular CSS and JS includes ([example](https://github.com/ShawnTeoh/matjek/blob/gh-pages/projects.md/))
-* [Fancy "About" page](https://shawnteoh.github.io/matjek/about)
+- Shortcodes (Toasts card, mermaid)
+- Pages Plugins (emoji, gist, avatar, mentions)
+- Auto generate sidebar
+- [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
+- Service worker (caches)
+- SEO (404, robots.txt, sitemap.xml)
+- Canonical Link (Open Graph, Twitter Card, Schema data)
 
-## Installation
+## Options
 
-Clone or fork this repo and edit `_config.yml` as needed.
+| name          | default value        | description       |
+| ------------- | -------------------- | ----------------- |
+| `title`       | repo name            |                   |
+| `description` | repo description     |                   |
+| `url`         | user domain or cname |                   |
+| `baseurl`     | repo name            |                   |
+| `lang`        | `en`                 |                   |
+| `direction`   | `auto`               | `ltr` or `rtl`    |
+| `highlighter` | `rouge`              | Cannot be changed |
 
-## Configuration
+```yml
+# folders sort
+readme_index:
+  with_frontmatter: true
 
-Most of the configurations can be found in `_config.yml`. The configurations listed below are specific to MatJek. If you are not using `google_tracking_id` or `disqus_shortname`, just remove them completely.
+meta:
+  key1: value1
+  key2: value2
+  .
+  .
+  .
 
-```yaml
-github_profile: "github_profile_url"
-user: "your_name" # Appears at sidebar
-user_email: "your_email" # Appears at sidebar, remove whole variable if unwanted
-contact_url: "google_form_link"
-google_tracking_id: "google_analytics_ID"
-disqus_shortname: "shortname_given_by_Disqus"
+google:
+  gtag:
+  adsense:
+
+mathjax: # this will prased to json, default: {}
+
+mermaid:
+  custom:     # mermaid link
+  initialize: # this will prased to json, default: {}
+
+scss:   # also _includes/extra/styles.scss
+script: # also _includes/extra/script.js
+
+translate:
+  # shortcodes
+  danger:
+  note:
+  tip:
+  warning:
+  # 404
+  not_found:
+  # copyright
+  revision:
+  # search
+  searching:
+  search:
+  search_docs:
+  search_results:
+  search_results_found: # the "#" in this translate will replaced with results size!
+  search_results_not_found:
+
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
 ```
 
-Edit the images in `assets/res` to suit your liking, but try to stick to the original resolutions.
+## The license
 
-If you would like to enable comments in a post (disqus_shortname must be provided), add this line to the front matter of the post.
-
-```yaml
-comments: 1
-```
-
-Add tags and categories to your posts in the front matter as well. Multiple tags/categories can be assigned but need to be separated by spaces.
-
-```yaml
-categories: default default2
-tags: test test2
-```
-
-## Contributing
-
-Bug reports and pull requests are welcomed on GitHub at https://github.com/shawnteoh/matjek. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, clone/fork the repo and run `bundle install`.
-
-To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000/matjek/`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-## License
-
-The theme is available as open source under the terms of the [GPL v3 License](https://www.gnu.org/licenses/gpl-3.0.en.html).
-
-## Libraries
-* [Materialize.css](http://materializecss.com/)
-* [GeoPattern](https://github.com/btmills/geopattern/)
-* [Animate.css](https://daneden.github.io/animate.css/)
-* [Morphtext](http://morphext.fyianlai.com/)
-
-## References
-* https://github.com/DONGChuan/Yummy-Jekyll/
-* https://github.com/codinfox/codinfox-lanyon/
+The theme is available as open source under the terms of the MIT License
