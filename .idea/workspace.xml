@@ -44,6 +44,10 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="746" y="221" width="938" height="582" key="DiffContextDialog" timestamp="1683621285124">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="746" y="221" width="938" height="582" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1683621285124" />
     <state x="645" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1683599874695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
