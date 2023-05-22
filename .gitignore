@@ -1,31 +1,22 @@
-# jekyll
-.jekyll-metadata
-_site
-.sass-cache
-.jekyll-cache
-
-
-# bundler
-*.gem
-Gemfile.lock
-
-
-# python
-*.whl
-
-
 # npm
-node_modules
 package-lock.json
+node_modules
 
+# yarn
+yarn.lock
+yarn-error.log
 
-# _sass
-_sass/@primer/css/**/*.md
+# pnpm
+pnpm-lock.yaml
 
+# vscode
+.vscode
 
-# lighthouse
-*.report.html
+# vuepress
+docs/.vuepress/dist
 
+# 百度链接推送
+urls.txt
 
-# action
-action.changelog.md
+# mac
+.DS_Store

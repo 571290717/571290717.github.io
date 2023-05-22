@@ -1,31 +1,31 @@
 {
+  "name": "theme-vdoing-blog",
+  "version": "1.0.0",
   "scripts": {
-    "report": "lighthouse http://127.0.0.1:4000",
-    "build": "webpack --mode production",
-    "format": "prettier . --check --write"
+    "dev": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs",
+    "build": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs",
+    "deploy": "bash deploy.sh",
+    "editFm": "node utils/editFrontmatter.js",
+    "baiduPush": "node utils/baiduPush.js https://xugaoyi.com && bash baiduPush.sh",
+    "publish": "cd ./vdoing && npm publish && cd .. && yarn updateTheme",
+    "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D"
   },
-  "dependencies": {
-    "@primer/css": "^15.2.0",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.5.1",
-    "jquery.toc": "^0.4.0",
-    "lato-font": "^3.0.0",
-    "material-design-icons": "^3.0.1",
-    "material-design-lite": "^1.3.0",
-    "mermaid": "^8.8.2",
-    "roboto-fontface": "^0.10.0"
-  },
+  "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^5.0.0",
-    "lighthouse": "^6.4.1",
-    "mini-css-extract-plugin": "^1.2.1",
-    "prettier": "^2.1.2",
-    "sass": "^1.27.1",
-    "sass-loader": "^10.0.4",
-    "webpack": "^5.3.0",
-    "webpack-cli": "^4.1.0"
+    "dayjs": "^1.9.7",
+    "inquirer": "^7.1.0",
+    "json2yaml": "^1.1.0",
+    "vuepress": "1.9.5",
+    "vuepress-plugin-baidu-autopush": "^1.0.1",
+    "vuepress-plugin-baidu-tongji": "^1.0.1",
+    "vuepress-plugin-comment": "^0.7.3",
+    "vuepress-plugin-demo-block": "^0.7.2",
+    "vuepress-plugin-fulltext-search": "^2.2.1",
+    "vuepress-plugin-one-click-copy": "^1.0.2",
+    "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-plugin-thirdparty-search": "^1.0.2",
+    "vuepress-plugin-zooming": "^1.1.7",
+    "vuepress-theme-vdoing": "^1.12.8",
+    "yamljs": "^0.3.0"
   }
 }
