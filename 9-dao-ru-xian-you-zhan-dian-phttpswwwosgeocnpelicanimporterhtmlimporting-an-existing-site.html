@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="chinese (simplified)">
+<head>
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title># 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)</title>
+  <meta name="description" content="">
+  <meta name="author" content="the_toast">
+
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="/theme/css/notebook.css" type="text/css" />
+  <link rel="shortcut icon" href="/20230502-myphoto.jpg">
+
+  <!-- Feed Meta Data -->
+  <link href="/" type="application/atom+xml" rel="alternate" title="the_toast ATOM Feed" />
+
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="/20230502-myphoto.jpg">
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="/9-dao-ru-xian-you-zhan-dian-phttpswwwosgeocnpelicanimporterhtmlimporting-an-existing-site.html">
+<meta name="twitter:title" content="the_toast ~ # 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)">
+<meta name="twitter:description" content="<h2>描述<a href="https://www.osgeo.cn/pelican/importer.html#description">¶</a></h2>
+<p><code>pelican-import</code> 是一个命令行工具，用于将其他软件中的项目转换为reStructuredText或Markdown。支持的导入格式包括：</p>
+<ul>
+<li>Blogger XML导出</li>
+</ul>
+<iframe id="aswift_1" name="aswift_1" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="667" height="167" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1466963416408457&amp;output=html&amp;h=167&amp;slotname=8850786025&amp;adk=3293689050&amp;adf=2778683036&amp;pi=t.ma~as.8850786025&amp;w=667&amp;fwrn=4&amp;lmt=1667356602&amp;rafmt=11&amp;format=667x167&amp;url=https%3A%2F%2Fwww.osgeo.cn%2Fpelican%2Fimporter.html&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMC4xLjAiLCJ4ODYiLCIiLCIxMDkuMC4xNTE4LjEwMCIsW10sMCxudWxsLCI2NCIsW1siTm90X0EgQnJhbmQiLCI5OS4wLjAuMCJdLFsiTWljcm9zb2Z0IEVkZ2UiLCIxMDkuMC4xNTE4LjEwMCJdLFsiQ2hyb21pdW0iLCIxMDkuMC41NDE0LjE0MSJdXSwwXQ..&amp;dt=1683791443774&amp;bpp=1&amp;bdt=139&amp;idt=157&amp;shv=r20230509&amp;mjsv=m202305090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D641c9467ea40a91a-22538105a6e0002d%3AT%3D1683770664%3ART%3D1683770664%3AS%3DALNI_MZtvmW3aPDkmcOm4FI_vtgEM7P9QQ&amp;gpic=UID%3D00000bf0713407e1%3AT%3D1683770664%3ART%3D1683770664%3AS%3DALNI_MbArlFIJFScL_XeWUNzgI45KFiPNw&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=2280762892108&amp;frm=20&amp;pv=1&amp;ga_vid=882872583.1683791444&amp;ga_sid=1683791444&amp;ga_hid=1493424792&amp;ga_fc=0&amp;rplot=4&amp;u_tz=480&amp;u_his=21&amp;u_h=864&amp;u_w=1536&amp;u_ah=824&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1&amp;dmc=4&amp;adx=50&amp;ady=380&amp;biw=743&amp;bih=740&amp;scr_x=0&amp;scr_y=0&amp;eid=44759927%2C44759876%2C44773810%2C44759842%2C31074511%2C44788442%2C44789779&amp;oid=2&amp;pvsid=2428107822723476&amp;tmod=763085482&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.osgeo.cn%2Fpelican%2Fpelican-themes.html&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C768%2C824%2C760%2C740&amp;vis=1&amp;rsz=%7C%7CapEe%7C&amp;abl=CA&amp;pfx=0&amp;fu=128&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;xpc=oTpfBnIHip&amp;p=https%3A//www.osgeo.cn&amp;dtd=178" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CN_Npfjj7P4CFQLTvQodyUwBpQ" style="box-sizing: border-box; left: 0px; position: absolute; top: 0px; border: 0px; width: 667px; height: 167px;"></iframe>
+
+<ul>
+<li>
+<p>Dotclear导出</p>
+</li>
+<li>
+<p>后期API</p>
+</li>
+<li>
+<p>Tumblr API公司</p>
+</li>
+<li>
+<p>WordPress XML导出</p>
+</li>
+<li>
+<p>RSS/Atom源</p>
+</li>
+</ul>
+<p>从HTML到restructedText或Markdown的转换依赖于 <a href="https://pandoc.org/">Pandoc …</a></p>">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="the_toast ~ # 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)" />
+<meta property="og:description" content="<h2>描述<a href="https://www.osgeo.cn/pelican/importer.html#description">¶</a></h2>
+<p><code>pelican-import</code> 是一个命令行工具，用于将其他软件中的项目转换为reStructuredText或Markdown。支持的导入格式包括：</p>
+<ul>
+<li>Blogger XML导出</li>
+</ul>
+<iframe id="aswift_1" name="aswift_1" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="667" height="167" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1466963416408457&amp;output=html&amp;h=167&amp;slotname=8850786025&amp;adk=3293689050&amp;adf=2778683036&amp;pi=t.ma~as.8850786025&amp;w=667&amp;fwrn=4&amp;lmt=1667356602&amp;rafmt=11&amp;format=667x167&amp;url=https%3A%2F%2Fwww.osgeo.cn%2Fpelican%2Fimporter.html&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMC4xLjAiLCJ4ODYiLCIiLCIxMDkuMC4xNTE4LjEwMCIsW10sMCxudWxsLCI2NCIsW1siTm90X0EgQnJhbmQiLCI5OS4wLjAuMCJdLFsiTWljcm9zb2Z0IEVkZ2UiLCIxMDkuMC4xNTE4LjEwMCJdLFsiQ2hyb21pdW0iLCIxMDkuMC41NDE0LjE0MSJdXSwwXQ..&amp;dt=1683791443774&amp;bpp=1&amp;bdt=139&amp;idt=157&amp;shv=r20230509&amp;mjsv=m202305090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D641c9467ea40a91a-22538105a6e0002d%3AT%3D1683770664%3ART%3D1683770664%3AS%3DALNI_MZtvmW3aPDkmcOm4FI_vtgEM7P9QQ&amp;gpic=UID%3D00000bf0713407e1%3AT%3D1683770664%3ART%3D1683770664%3AS%3DALNI_MbArlFIJFScL_XeWUNzgI45KFiPNw&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=2280762892108&amp;frm=20&amp;pv=1&amp;ga_vid=882872583.1683791444&amp;ga_sid=1683791444&amp;ga_hid=1493424792&amp;ga_fc=0&amp;rplot=4&amp;u_tz=480&amp;u_his=21&amp;u_h=864&amp;u_w=1536&amp;u_ah=824&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1&amp;dmc=4&amp;adx=50&amp;ady=380&amp;biw=743&amp;bih=740&amp;scr_x=0&amp;scr_y=0&amp;eid=44759927%2C44759876%2C44773810%2C44759842%2C31074511%2C44788442%2C44789779&amp;oid=2&amp;pvsid=2428107822723476&amp;tmod=763085482&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.osgeo.cn%2Fpelican%2Fpelican-themes.html&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C768%2C824%2C760%2C740&amp;vis=1&amp;rsz=%7C%7CapEe%7C&amp;abl=CA&amp;pfx=0&amp;fu=128&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;xpc=oTpfBnIHip&amp;p=https%3A//www.osgeo.cn&amp;dtd=178" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CN_Npfjj7P4CFQLTvQodyUwBpQ" style="box-sizing: border-box; left: 0px; position: absolute; top: 0px; border: 0px; width: 667px; height: 167px;"></iframe>
+
+<ul>
+<li>
+<p>Dotclear导出</p>
+</li>
+<li>
+<p>后期API</p>
+</li>
+<li>
+<p>Tumblr API公司</p>
+</li>
+<li>
+<p>WordPress XML导出</p>
+</li>
+<li>
+<p>RSS/Atom源</p>
+</li>
+</ul>
+<p>从HTML到restructedText或Markdown的转换依赖于 <a href="https://pandoc.org/">Pandoc …</a></p>" />
+<meta property="og:image" content="20230502-myphoto.jpg" />
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside>
+    <p><a href=""><img id="avatar" src="/theme/images/20230502-myphoto.jpg"></a></p>
+    <h1>the_toast</h1>
+    <p></p>
+    <hr>
+    <h2>Social</h2>
+    <ul class="social">
+      <li style="list-style-image : url(/theme/images/icons/github.png);"><a href="#">GitHub</a></li>
+      <li style="list-style-image : url(/theme/images/icons/facebook.png);"><a href="#">facebook</a></li>
+      <li style="list-style-image : url(/theme/images/icons/github2.png);"><a href="#">GitHub2</a></li>
+      <li style="list-style-image : url(/theme/images/icons/phone.png);"><a href="13304036141">phone</a></li>
+      <li style="list-style-image : url(/theme/images/icons/rss.png);"><a href="/" rel="alternate"><i class="icon-bookmark icon-large"></i>Atom feed</a></li>
+    </ul>
+    <h2>Categories</h2>
+    <ul class="navbar">
+      <li class="active"><a href="/category/misc.html">misc</a></li>
+      <li><a href="/category/pelicanjiao-cheng.html">pelican教程</a></li>
+      <li><a href="/category/review.html">Review</a></li>
+      <li><a href="/category/shou-ye.html">首页</a></li>
+    </ul> 
+  </aside>
+
+
+  <!--    外部容器-->
+<div class="top-bar-wrapper">
+  <!--     内部容器-->
+        <div class="top-bar clearfix">
+  <!--          设置父元素-->
+          <div class="top-nav">
+  <!--            鼠标移入出现下拉框元素-->
+                <h2>目录</h2>
+                <ul class="nav">
+                  <li><a href="/category/shou-ye.html">首页</a></li>
+                  <li><a href="/category/review.html">Review</a></li>
+                  <li><a href="/category/pelicanjiao-cheng.html">pelican教程</a></li>
+                  <li class="active"><a href="/category/misc.html">misc</a></li>
+                </ul>
+
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+  <!-- Content -->
+  <article>
+<section id="content">
+    <article>
+        <header class="post_list">
+            <h2 class="post_title"><a href="/9-dao-ru-xian-you-zhan-dian-phttpswwwosgeocnpelicanimporterhtmlimporting-an-existing-site.html" rel="bookmark" title="Permalink to # 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)"># 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)</a></h2>
+            <span>Par </span>
+            <a href="/author/the_toast.html">@the_toast</a>
+            <span> dans </span>
+            <span class="post_category"><a href="/category/misc.html" rel="bookmark" title="Permalink to misc">[ misc ]</a></span>
+            <span> le </span>
+            <span class="post_date">2023-10-31 星期二 00:00</span>
+            <div><span>Tags : </span>
+            </div>
+
+            <div class="entry-social">
+                <span class="twitter"><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=/9-dao-ru-xian-you-zhan-dian-phttpswwwosgeocnpelicanimporterhtmlimporting-an-existing-site.html&text=# 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)&via=">Twitter</a></span>
+
+                <span class="gplus"><a target="_blank" title="Google +" href="https://plus.google.com/share?url=/9-dao-ru-xian-you-zhan-dian-phttpswwwosgeocnpelicanimporterhtmlimporting-an-existing-site.html&hl=fr" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">Google+</a></span>
+
+                <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=/9-dao-ru-xian-you-zhan-dian-phttpswwwosgeocnpelicanimporterhtmlimporting-an-existing-site.html&t=# 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)">Facebook</a></span>
+
+                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=</9-dao-ru-xian-you-zhan-dian-phttpswwwosgeocnpelicanimporterhtmlimporting-an-existing-site.html&title=# 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;">Linkedin</a>
+
+                <span class="mail"><a href="mailto:?subject=# 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)&amp;body=Viens découvrir un article à propos de [# 9、导入现有站点[¶](https://www.osgeo.cn/pelican/importer.html#importing-an-existing-site)] sur le site de the_toast. /9-dao-ru-xian-you-zhan-dian-phttpswwwosgeocnpelicanimporterhtmlimporting-an-existing-site.html" title="Share by Email" target="_blank">Mail</a></span>
+            </div>
+        </header>
+        <div class="entry-content">
+            <h2>描述<a href="https://www.osgeo.cn/pelican/importer.html#description">¶</a></h2>
+<p><code>pelican-import</code> 是一个命令行工具，用于将其他软件中的项目转换为reStructuredText或Markdown。支持的导入格式包括：</p>
+<ul>
+<li>Blogger XML导出</li>
+</ul>
+<iframe id="aswift_1" name="aswift_1" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="667" height="167" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-1466963416408457&amp;output=html&amp;h=167&amp;slotname=8850786025&amp;adk=3293689050&amp;adf=2778683036&amp;pi=t.ma~as.8850786025&amp;w=667&amp;fwrn=4&amp;lmt=1667356602&amp;rafmt=11&amp;format=667x167&amp;url=https%3A%2F%2Fwww.osgeo.cn%2Fpelican%2Fimporter.html&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMC4xLjAiLCJ4ODYiLCIiLCIxMDkuMC4xNTE4LjEwMCIsW10sMCxudWxsLCI2NCIsW1siTm90X0EgQnJhbmQiLCI5OS4wLjAuMCJdLFsiTWljcm9zb2Z0IEVkZ2UiLCIxMDkuMC4xNTE4LjEwMCJdLFsiQ2hyb21pdW0iLCIxMDkuMC41NDE0LjE0MSJdXSwwXQ..&amp;dt=1683791443774&amp;bpp=1&amp;bdt=139&amp;idt=157&amp;shv=r20230509&amp;mjsv=m202305090101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D641c9467ea40a91a-22538105a6e0002d%3AT%3D1683770664%3ART%3D1683770664%3AS%3DALNI_MZtvmW3aPDkmcOm4FI_vtgEM7P9QQ&amp;gpic=UID%3D00000bf0713407e1%3AT%3D1683770664%3ART%3D1683770664%3AS%3DALNI_MbArlFIJFScL_XeWUNzgI45KFiPNw&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=2280762892108&amp;frm=20&amp;pv=1&amp;ga_vid=882872583.1683791444&amp;ga_sid=1683791444&amp;ga_hid=1493424792&amp;ga_fc=0&amp;rplot=4&amp;u_tz=480&amp;u_his=21&amp;u_h=864&amp;u_w=1536&amp;u_ah=824&amp;u_aw=1536&amp;u_cd=24&amp;u_sd=1&amp;dmc=4&amp;adx=50&amp;ady=380&amp;biw=743&amp;bih=740&amp;scr_x=0&amp;scr_y=0&amp;eid=44759927%2C44759876%2C44773810%2C44759842%2C31074511%2C44788442%2C44789779&amp;oid=2&amp;pvsid=2428107822723476&amp;tmod=763085482&amp;uas=0&amp;nvt=1&amp;ref=https%3A%2F%2Fwww.osgeo.cn%2Fpelican%2Fpelican-themes.html&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C768%2C824%2C760%2C740&amp;vis=1&amp;rsz=%7C%7CapEe%7C&amp;abl=CA&amp;pfx=0&amp;fu=128&amp;bc=31&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;xpc=oTpfBnIHip&amp;p=https%3A//www.osgeo.cn&amp;dtd=178" data-google-container-id="a!2" data-load-complete="true" data-google-query-id="CN_Npfjj7P4CFQLTvQodyUwBpQ" style="box-sizing: border-box; left: 0px; position: absolute; top: 0px; border: 0px; width: 667px; height: 167px;"></iframe>
+
+<ul>
+<li>
+<p>Dotclear导出</p>
+</li>
+<li>
+<p>后期API</p>
+</li>
+<li>
+<p>Tumblr API公司</p>
+</li>
+<li>
+<p>WordPress XML导出</p>
+</li>
+<li>
+<p>RSS/Atom源</p>
+</li>
+</ul>
+<p>从HTML到restructedText或Markdown的转换依赖于 <a href="https://pandoc.org/">Pandoc</a> . 对于Dotclear，如果源帖子是用Markdown语法编写的，它们将不会被转换（因为Pelican也支持Markdown）。</p>
+<p>注解</p>
+<p>与鹈鹕不同，Wordpress支持每篇文章多个类别。它们作为逗号分隔的字符串导入。您必须手动解决这些问题，或者使用如下插件 <a href="https://github.com/pelican-plugins/more-categories">More Categories</a> 这使得每篇文章可以有多个类别。</p>
+<h2>依赖关系<a href="https://www.osgeo.cn/pelican/importer.html#dependencies">¶</a></h2>
+<p><code>pelican-import</code> 有一些其他Pelican不需要的依赖性：</p>
+<ul>
+<li><em>美丽之旅4</em> 和 <em>lxml</em> ，用于WordPress和Dotclear导入。可以像其他Python包一样安装 (<code>pip install BeautifulSoup4 lxml</code> ）</li>
+<li><em>提要分析器</em> 源，用于导入 (<code>pip install feedparser</code> ）</li>
+<li><em>潘多克</em> 见 <a href="https://pandoc.org/installing.html">Pandoc site</a> 有关操作系统的安装说明。</li>
+</ul>
+<h2>使用<a href="https://www.osgeo.cn/pelican/importer.html#usage">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">pelican</span><span class="o">-</span><span class="kn">import</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">blogger</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">dotclear</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">posterous</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tumblr</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">wpfile</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">feed</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">m</span> <span class="n">MARKUP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">dir</span><span class="o">-</span><span class="n">cat</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">dir</span><span class="o">-</span><span class="n">page</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">strip</span><span class="o">-</span><span class="n">raw</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">wp</span><span class="o">-</span><span class="n">custpost</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">wp</span><span class="o">-</span><span class="n">attach</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">slugs</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">e</span> <span class="n">EMAIL</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="n">PASSWORD</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span> <span class="n">BLOGNAME</span><span class="p">]</span>
+               <span class="nb">input</span><span class="o">|</span><span class="n">api_token</span><span class="o">|</span><span class="n">api_key</span>
+</code></pre></div>
+
+<h3>位置参数<a href="https://www.osgeo.cn/pelican/importer.html#positional-arguments">¶</a></h3>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th><code>input</code></th>
+<th>要读取的输入文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api_token</code></td>
+<td>（仅限Posterous）api_令牌可从http://posterous.com/api/</td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>（仅限Tumblr）api密钥可从https://www.tumblr.com/oauth/apps</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3>可选参数<a href="https://www.osgeo.cn/pelican/importer.html#optional-arguments">¶</a></h3>
+<blockquote>
+<ul>
+<li>-h, --help</li>
+</ul>
+<p>显示此帮助消息并退出</p>
+<ul>
+<li>--blogger</li>
+</ul>
+<p>Blogger XML导出（默认值：False）</p>
+<ul>
+<li>--dotclear</li>
+</ul>
+<p>Dotclear导出（默认值：False）</p>
+<ul>
+<li>--posterous</li>
+</ul>
+<p>Posterous API（默认值：False）</p>
+<ul>
+<li>--tumblr</li>
+</ul>
+<p>Tumblr API（默认值：False）</p>
+<ul>
+<li>--wpfile</li>
+</ul>
+<p>WordPress XML导出（默认值：False）</p>
+<ul>
+<li>--feed</li>
+</ul>
+<p>要分析的源（默认值：False）</p>
+<ul>
+<li>-o OUTPUT, --output OUTPUT</li>
+</ul>
+<p>输出路径（默认：内容）</p>
+<ul>
+<li>-m MARKUP, --markup MARKUP</li>
+</ul>
+<p>输出标记格式： <code>rst</code> ， <code>markdown</code> 或 <code>asciidoc</code> （默认： <code>rst</code> ）</p>
+<ul>
+<li>--dir-cat</li>
+</ul>
+<p>将文件放入类别名称为的目录中（默认值：False）</p>
+<ul>
+<li>--dir-page</li>
+</ul>
+<p>将识别为页面的文件放入“pages/”子目录（blogger和wordpress仅导入）（默认值：False）</p>
+<ul>
+<li>--filter-author</li>
+</ul>
+<p>只从指定作者导入文章</p>
+<ul>
+<li>--strip-raw</li>
+</ul>
+<p>剥离无法转换为标记（如flash嵌入或iframes）的原始HTML代码（仅限wordpress导入）（默认值：False）</p>
+<ul>
+<li>--wp-custpost</li>
+</ul>
+<p>将wordpress自定义文章类型放入目录中。如果与--dir cat选项一起使用，目录将创建为“/post_type/category/”（仅限wordpress import）</p>
+<ul>
+<li>--wp-attach</li>
+</ul>
+<p>下载作为附件上传到wordpress的文件。文件将作为一个列表添加到文章标题中，并且到文章中文件的链接将被更新。所有文件都将被下载，即使它们与文章没有关联。文件将以其原始路径下载到输出目录中，例如“output/wp uploads/date/postname”/文件.jpg". （仅限wordpress导入）（需要internet连接）</p>
+<ul>
+<li>--disable-slugs</li>
+</ul>
+<p>禁止在输出中存储来自导入的post的slug。禁用此功能后，您的Pelican网址可能与您的原始帖子不一致。（默认值：False）</p>
+<ul>
+<li>-e EMAIL, --email=EMAIL</li>
+</ul>
+<p>用于验证Posterous API的电子邮件</p>
+<ul>
+<li>-p PASSWORD, --password=PASSWORD</li>
+</ul>
+<p>用于验证Posterous API的密码</p>
+<ul>
+<li>-b BLOGNAME, --blogname=BLOGNAME</li>
+</ul>
+<p>Tumblr API中使用的博客名称</p>
+</blockquote>
+<h2>实例<a href="https://www.osgeo.cn/pelican/importer.html#examples">¶</a></h2>
+<p>博客写手：</p>
+<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">pelican</span><span class="o">-</span><span class="kn">import</span> <span class="o">--</span><span class="n">blogger</span> <span class="o">-</span><span class="n">o</span> <span class="o">~/</span><span class="n">output</span> <span class="o">~/</span><span class="n">posts</span><span class="o">.</span><span class="n">xml</span>
+</code></pre></div>
+
+<p>对于Dotclear:：</p>
+<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">pelican</span><span class="o">-</span><span class="kn">import</span> <span class="o">--</span><span class="n">dotclear</span> <span class="o">-</span><span class="n">o</span> <span class="o">~/</span><span class="n">output</span> <span class="o">~/</span><span class="n">backup</span><span class="o">.</span><span class="n">txt</span>
+</code></pre></div>
+
+<p>对于波斯特罗斯：</p>
+<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">pelican</span><span class="o">-</span><span class="kn">import</span> <span class="o">--</span><span class="n">posterous</span> <span class="o">-</span><span class="n">o</span> <span class="o">~/</span><span class="n">output</span> <span class="o">--</span><span class="n">email</span><span class="o">=&lt;</span><span class="n">email_address</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">password</span><span class="o">=&lt;</span><span class="n">password</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">api_token</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<p>对于Tumblr:：</p>
+<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">pelican</span><span class="o">-</span><span class="kn">import</span> <span class="o">--</span><span class="n">tumblr</span> <span class="o">-</span><span class="n">o</span> <span class="o">~/</span><span class="n">output</span> <span class="o">--</span><span class="n">blogname</span><span class="o">=&lt;</span><span class="n">blogname</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">api_token</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<p>对于WordPress:：</p>
+<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">pelican</span><span class="o">-</span><span class="kn">import</span> <span class="o">--</span><span class="n">wpfile</span> <span class="o">-</span><span class="n">o</span> <span class="o">~/</span><span class="n">output</span> <span class="o">~/</span><span class="n">posts</span><span class="o">.</span><span class="n">xml</span>
+</code></pre></div>
+
+<h2>测验<a href="https://www.osgeo.cn/pelican/importer.html#tests">¶</a></h2>
+<p>要测试模块，可以使用示例文件：</p>
+<ul>
+<li>对于WordPress：https://www.wpkinerter.com/wp-themes/how-to-add-dummy-content-for-theme-development-in-wordpress/</li>
+<li>对于Dotclear：http://media.dotdatict.org/tda/downloads/lorem-backup.txt</li>
+</ul>
+        </div>
+    </article>
+</section>
+  </article>
+
+  <!-- Footer -->
+  <footer>
+    <address id="about" class="vcard body">
+      Blog powered by <a href="http://getpelican.com/">Pelican</a>, 
+      which takes great advantage of <a href="http://python.org">Python</a>.
+      Theme <a href="https://github.com/quack1/notebook/">Notebook</a> by <a href="https://twitter.com/_Quack1">@Quack1</a>.
+    </address>
+  </footer>
+
+
+</body>
+</html>

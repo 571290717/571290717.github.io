@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic|Share+Tech+Mono|Oxygen+Mono);
 html { 
   font-family: 'Quattrocento Sans', sans-serif;
-  background: white;
+  background: #0a3035;
   font-size: 14px;
 }
 
@@ -15,11 +15,16 @@ h1, h2 {
 }
 
 /* Body */
-body {margin: 0}
+body {
+  margin: 0;
+  background-image: url('/theme/images/20230502-photo.jpg');
+  background-size: cover;
+}
 body > article, footer {
   line-height: 1.6em;
   display: block;
-  max-width: 600px;
+  max-width: 58%;
+  /* max-width: 600px; */
   margin: 40px auto auto 285px;
   padding: 20px 10px 0;
 }
@@ -44,22 +49,23 @@ article > header {
 }
 .post_list {
   list-style-type: none;
-  padding: 0px 10px;
-  /*background: #E0E0E0;*/
-  box-shadow: 0px 0px 5px 3px #1DAEDF;
+  padding: 1px 10px 10px 10px;
+  background: #1b5259;
+  box-shadow: 0px 0px 5px 3px hsl(118, 94%, 12%);
   -moz-border-radius: 5px 0;
   -webkit-border-radius: 5px 0;
-  border-radius: 5px 5px;
+  border-radius: 12px 12px;
+  margin: 12px;
 }
 li.post_list:hover {
   box-shadow: 0px 0px 5px 3px #52ACAE;
 }
 
 /* Links */;
-a  { color:#1DAEDF; text-decoration:none; }
-a:visited { color:#1DAEDF; text-decoration:none; }
-a:link { color:#1DAEDF; text-decoration:none; }
-a:active { color:#1DAEDF; text-decoration:none; }
+a  { color:#000304; text-decoration:none; }
+a:visited { color:#000304; text-decoration:none; }
+a:link { color:#000304; text-decoration:none; }
+a:active { color:#000304; text-decoration:none; }
 a:hover { text-decoration: underline; }
 
 /* Code */
@@ -142,8 +148,10 @@ aside {
   position: fixed;
   top: 0; left: 0;
   padding: 30px;
-  background-image: url('./theme/images/avator.png');
+  background-image: url('/theme/images/20230502-left.jpg');
+  color:#494949;
   /* background-image: url(http://i.imgur.com/5nwPL.png); */
+  background-size: cover;
   color: white;
   box-shadow: 0 0 3px black;
 }
@@ -167,7 +175,7 @@ aside > h2 {
   border-radius: 50%;
   display: block;
   margin: 0 10px 10px 0;
-  box-shadow: 0px 0px 5px 3px #1DAEDF;
+  box-shadow: 0px 0px 5px 3px #0e84b5;
   -webkit-transition: 200ms;
      -moz-transition: 200ms;
       -ms-transition: 200ms;
@@ -178,3 +186,71 @@ aside > h2 {
 #avatar:hover {
   box-shadow: 0px 0px 5px 3px white;
 }
+
+/*设置外部容器样式*/
+.top-bar-wrapper{
+  background-color: #0a3035;
+  height:60px;
+  margin: 0 auto;
+}
+
+
+/*设置内部容器样式*/
+.top-bar{
+  /*固定宽度*/
+  width: 900px;
+  /*水平居中*/
+  margin: 0 auto;
+  position: relative;
+}
+
+.nav li{
+  float: left;
+  /*去除无序列表中的下划线*/
+  list-style: none;
+  /*文字在父元素中居中*/
+  line-height: 40px;
+}
+.nav a{
+  /*将行内元素变为块元素*/
+  display: block;
+  /*去除无序列表中的小圆点*/
+  text-decoration: none;
+  /*字体颜色*/
+  color: white;
+  /*字体大小*/
+  font-size: 17px;
+  /*设置内边距*/
+  padding: 0 27px;
+}
+/*鼠标移入时a的效果*/
+.nav a:hover{
+  color: rgb(0, 208, 255);
+
+}
+
+/* 列表样式 */
+/* .top-nav .list{
+  display: none;
+  width:900px;
+  height: 600px;
+  background-color: #0a3035;
+  top: 0 ;
+  position: absolute;
+  z-index: 999;
+}
+
+.top-nav{
+  float: left;
+}
+
+.top-nav:hover .list{
+  display: block;
+} */
+
+.nav{
+  position: relative;
+  z-index: 9999;
+  top: -44px;
+  margin-top: 0px;
+} 
