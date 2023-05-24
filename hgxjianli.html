@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://127.0.0.1:8000/hgxjianli.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>hgxjianli</title><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><link href="./hgxjianli_files/app.f7a53c9b73746e433352d3459fa9b414.css" rel="stylesheet"></head><body><div data-v-22ce9519="" id="app"><div data-v-35c047fd="" data-v-22ce9519="" class="styleEditor"><div data-v-35c047fd="" class="code"><style>/*
+* Inspired by http://strml.net/
+* 源码地址 https://gitee.com/zhousiwei/anires
+* 大家好，我是黄高翔。
+* 我来写一份简历！
+*/
+
+/* 给所有元素加上过渡效果 */
+* {
+  transition: all .1s;
+}
+/* 设置背景颜色 */
+html {
+  color: rgb(222,222,222); background: rgb(0,43,54);
+}
+
+/* 设置边框 */
+.styleEditor {
+  padding: .5em;
+  border: 1px solid;
+  margin: .5em;
+  overflow: auto;
+  width: 45vw; height: 90vh;
+  /* background: rgb(20,20,20); */
+}
+/* 代码高亮 */
+.token.selector{ color: rgb(133,153,0); }
+.token.property{ color: rgb(187,137,0); }
+.token.punctuation{ color: yellow; }
+.token.function{ color: rgb(42,161,152); }
+
+/* 加3D效果 */
+html{
+  perspective: 1000px;
+}
+.styleEditor {
+  position: fixed; left: 0; top: 0;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: rotateY(10deg) translateZ(-100px) ;
+          transform: rotateY(10deg) translateZ(-100px) ;
+}
+
+/* 准备一个编辑器 */
+.resumeEditor{
+  position: fixed; right: 0; top: 0;
+  padding: .5em;  margin: .5em;
+  width: 48vw; height: 90vh;
+  border: 1px solid;
+  background: white; color: #222;
+  overflow: auto;
+}
+/* 开始写简历 */
+
+/*将Markdown格式翻译成HTML
+ *再对HTML加点样式
+*/
+.resumeEditor{
+  padding: 2em;
+}
+.resumeEditor h2{
+  display: inline-block;
+  border-bottom: 1px solid;
+  margin: 1em 0 .5em;
+}
+.resumeEditor ul,.resumeEditor ol{
+  list-style: none;
+}
+.resumeEditor ul> li::before{
+  content: '•';
+  margin-right: .5em;
+}
+.resumeEditor ol {
+  counter-reset: section;
+}
+.resumeEditor ol li::before {
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  margin-right: .5em;
+}
+.resumeEditor blockquote {
+  margin: 1em;
+  padding: .5em;
+  background: #ddd;
+}
+</style></div> <pre data-v-35c047fd=""><span class="token comment">/*
+* Inspired by http://strml.net/
+* 源码地址 https://gitee.com/zhousiwei/anires
+* 大家好，我是黄高翔。
+* 我来写一份简历！
+*/</span>
+
+<span class="token comment">/* 给所有元素加上过渡效果 */</span>
+<span class="token selector">*</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all .1s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* 设置背景颜色 */</span>
+<span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>222<span class="token punctuation">,</span>222<span class="token punctuation">,</span>222<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>43<span class="token punctuation">,</span>54<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 设置边框 */</span>
+<span class="token selector">.styleEditor</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 45vw<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 90vh<span class="token punctuation">;</span>
+  <span class="token comment">/* background: rgb(20,20,20); */</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* 代码高亮 */</span>
+<span class="token selector">.token.selector</span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>133<span class="token punctuation">,</span>153<span class="token punctuation">,</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.token.property</span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>187<span class="token punctuation">,</span>137<span class="token punctuation">,</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.token.punctuation</span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.token.function</span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>42<span class="token punctuation">,</span>161<span class="token punctuation">,</span>152<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+<span class="token comment">/* 加3D效果 */</span>
+<span class="token selector">html</span><span class="token punctuation">{</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 1000px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.styleEditor</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span> <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">-webkit-transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>10deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-100px<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+          <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>10deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-100px<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 准备一个编辑器 */</span>
+<span class="token selector">.resumeEditor</span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span> <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>  <span class="token property">margin</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 48vw<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 90vh<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span> <span class="token property">color</span><span class="token punctuation">:</span> #222<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* 开始写简历 */</span>
+
+<span class="token comment">/*将Markdown格式翻译成HTML
+ *再对HTML加点样式
+*/</span>
+<span class="token selector">.resumeEditor</span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor h2</span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1px solid<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 1em 0 .5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor ul,.resumeEditor ol</span><span class="token punctuation">{</span>
+  <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor ul&gt; li::before</span><span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">'•'</span><span class="token punctuation">;</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor ol</span> <span class="token punctuation">{</span>
+  <span class="token property">counter-reset</span><span class="token punctuation">:</span> section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor ol li::before</span> <span class="token punctuation">{</span>
+  <span class="token property">counter-increment</span><span class="token punctuation">:</span> section<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counters</span><span class="token punctuation">(</span>section<span class="token punctuation">,</span> <span class="token string">"."</span><span class="token punctuation">)</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor blockquote</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #ddd<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre></div> <div data-v-647e008b="" data-v-22ce9519="" class="resumeEditor htmlMode"><div data-v-647e008b="">
+  
+  
+  <h2 id="-">黄高翔</h2>
+  <p>24岁，软件测速工程师，2年半软件测试行业从业经验，目前在珠海工作。
+  
+    <br>
+    
+  热爱软件测试和软件开发行业，个人性格积极向上、接受新知识能力强、有良好的沟通协调能力。<br>
+  【积极向上】 在格力工作实习期也通过自己努力获得提前两个月转正资格。<br>
+  【接受能力强】 工作之余浏览TesterHome、51test等测试社区观察行业动向、学习优秀的测试工具和测试手段。<br>
+  【沟通协调】 工作期间曾组织测试组成员分工进行测试，最终提前10个工作日完成测试任务，领导和对接的开发部门也给予肯定。<br>
+  
+    
+  <br></p>
+  <ul>
+  <li><a target="_blank" rel="nofollow" href="https://571290717.gitee.io/tester.html">中英文简历</a></li>
+  </ul>
+  <h2 id="-">技能</h2>
+  <ul>
+  <li>功能测试、性能测试</li>
+  <li>自动化测试</li>
+  <li>python脚本开发</li>
+  <li>爬虫开发/li>
+  <li>Django系统开发</li>
+  <li>MySQL</li>
+  <li>Linux</li>
+  <li>开源爱好者</li>
+  <li>博客系统</li>
+  </ul>
+  <h2 id="-">技术及语言</h2>
+  <ul>
+  <li><strong>软件测试技术</strong>: 功能测试、性能测试、自动化测试</li>
+  <li><strong>python</strong>:Selenium、Requests、Unittest、Pytest、Django、Flask</li>
+  <li><strong>数据库</strong>: MySQL、MongoDB、redis</li>
+  <li><strong>OS</strong>: Linux、Windows、Android</li>
+  <li><strong>Others</strong>: Git、XMind、jenkins、docker</li>
+  </ul>
+  <h2 id="-">工作经历</h2>
+  <ol>
+  <li><a target="_blank" rel="nofollow" href="https://gree.com/">珠海格力电器有限公司</a></li>
+  </ol>
+  <h2 id="-">开源项目</h2>
+  <ol>
+  <li><a target="_blank" rel="nofollow" href="https://github.com/571290717">黄高翔的技术博客网站</a></li>
+  <li><a target="_blank" rel="nofollow" href="https://blog.csdn.net/gregcsdn">黄高翔的CSDN</a></li>
+  <li><a target="_blank" rel="nofollow" href="https://571290717.github.io/">黄高翔的github主页</a></li>
+  
+  </ol>
+  <h2 id="-">链接</h2>
+  <ul>
+  <li><a target="_blank" rel="nofollow" href="https://571290717.gitee.io/">技术博客</a></li>
+  <li><a target="_blank" rel="nofollow" href="https://github.com/571290717">GitHub</a></li>
+  
+  
+  
+  <li><a target="_blank" rel="nofollow" href="https://www.jianshu.com/u/02cbf31a043a">简书</a></li>
+  <li><a target="_blank" rel="nofollow" href="https://571290717.gitee.io/ibooks">开发笔记</a></li>
+  </ul>
+  <h2 id="-"><a target="_blank" rel="nofollow" href="https://571290717.gitee.io/">归档文章</a></h2>
+  <ol>
+  <li><a target="_blank" rel="nofollow" href="https://571290717.gitee.io/tags/软件测试技术/">软件测试技术</a></li>
+  </ol>
+  <h2 id="-">联系我</h2>
+  <ul>
+  <li>联系QQ：<strong>571290717</strong> </li>
+  <li>微信：<strong>571290717</strong></li>
+  
+  </ul>
+  <blockquote>
+  <p>感谢看到最后❀！
+  
+  </p>
+</blockquote>
+</div></div></div>
+
+<script type="text/javascript" 
+src="./hgxjianli_files/manifest.d1f392f27a224613941c.js.下载">
+</script><script type="text/javascript" 
+src="./hgxjianli_files/vendor.7d5595d162891aa59b23.js.下载">
+</script><script type="text/javascript" 
+src="./hgxjianli_files/app.c316f93ade3fe7cf3d9c.js.下载">
+</script></body></html>

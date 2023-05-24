@@ -1,8 +1,8 @@
 /*@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans&subset=latin,latin-ext); */
-@import url(http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic|Share+Tech+Mono|Oxygen+Mono);
-html { 
+
+html {
   font-family: 'Quattrocento Sans', sans-serif;
-  background: #0a3035;
+
   font-size: 14px;
 }
 
@@ -10,7 +10,7 @@ html {
 h1 { text-transform: uppercase }
 h1, h2 { 
 	font-weight: normal; 
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -21,12 +21,17 @@ body {
   background-size: cover;
 }
 body > article, footer {
-  line-height: 1.6em;
+  line-height: 1.8em;
+  padding-right: 7.6923%;
+  padding-left: 7.6923%;
   display: block;
   max-width: 58%;
   /* max-width: 600px; */
-  margin: 40px auto auto 285px;
+  margin: 0px auto auto 285px;
   padding: 20px 10px 0;
+  word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
 }
 
 /* Articles */
@@ -50,12 +55,13 @@ article > header {
 .post_list {
   list-style-type: none;
   padding: 1px 10px 10px 10px;
-  background: #1b5259;
-  box-shadow: 0px 0px 5px 3px hsl(118, 94%, 12%);
+  background: #3e82c85c;
+  box-shadow: 0px 0px 5px 3px hsl(204.2, 32.2%, 34.7%);
   -moz-border-radius: 5px 0;
   -webkit-border-radius: 5px 0;
   border-radius: 12px 12px;
   margin: 12px;
+  margin-inline-start: 40px;
 }
 li.post_list:hover {
   box-shadow: 0px 0px 5px 3px #52ACAE;
@@ -253,4 +259,19 @@ aside > h2 {
   z-index: 9999;
   top: -44px;
   margin-top: 0px;
-} 
+}
+
+.entry-content{
+  line-height: 1.8em;
+  padding-right: 7.6923%;
+  padding-left: 7.6923%;
+  padding-left: 15px;
+  background-color: rgba(223, 222, 222, 0.2);
+  margin-inline-start: 40px;
+}
+
+.entry-content > h1 {
+
+  font-size: large;
+
+}
