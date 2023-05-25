@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <title>Day 3 学习软件测试的必备知识——（测试基本流程和测试用例的设计） | The_toast Blog</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="/static/m-dark.css" />
+  <link rel="icon" href="/m" type="." />
+  <link rel="canonical" href="/软件测试/Day 3 学习软件测试的必备知识——（测试基本流程和测试用例的设计）.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+  <meta name="twitter:site" content="@your.brand" />
+  <meta name="twitter:site:id" content="1234567890" />
+  <meta property="og:site_name" content="The_toast Blog" />
+  <meta property="og:title" content="Day 3 学习软件测试的必备知识——（测试基本流程和测试用例的设计）" />
+  <meta name="twitter:title" content="Day 3 学习软件测试的必备知识——（测试基本流程和测试用例的设计）" />
+  <meta property="og:url" content="/软件测试/Day 3 学习软件测试的必备知识——（测试基本流程和测试用例的设计）.html" />
+  <meta property="og:description" content="Day 3 软件测试核心知识——（基本流程和测试用例及测试用例设计方法） [TOC] 一、软件测试的基本流程 我们上一篇文章介绍了公 …" />
+  <meta name="twitter:description" content="Day 3 软件测试核心知识——（基本流程和测试用例及测试用例设计方法） [TOC] 一、软件测试的基本流程 我们上一篇文章介绍了公 …" />
+  <meta property="og:image" content="https://your.brand/static/site.png" />
+  <meta name="twitter:image" content="https://your.brand/static/site.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:type" content="article" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="/" id="m-navbar-brand" class="m-col-t-9 m-col-m-none m-left-m">The_toast Blog</a>
+      <a id="m-navbar-show" href="#navigation" title="Show navigation" class="m-col-t-3 m-hide-m m-text-right"></a>
+      <a id="m-navbar-hide" href="#" title="Hide navigation" class="m-col-t-3 m-hide-m m-text-right"></a>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li><a href="/category/shou-ye.html">博客首页</a></li>
+            <li><a href="/category/ruan-jian-ce-shi.html">软件测试</a></li>
+            <li><a href="/category/jing-yan-lei-ji.html">经验积累</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="4">
+            <li><a href="/category/blog.html" id="m-navbar-current">BLog</a></li>
+            <li><a href="/hgxtester.html">个人介绍</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main>
+<div class="m-container">
+  <div class="m-row">
+    <article class="m-col-m-10 m-nopadb">
+      <header>
+        <h1 style="font-size: 2.2rem;margin-top: 30px;"><a href="/软件测试/Day 3 学习软件测试的必备知识——（测试基本流程和测试用例的设计）.html" rel="bookmark" title="Permalink to Day 3 学习软件测试的必备知识——（测试基本流程和测试用例的设计）">
+          <time class="m-date" datetime="2023-05-25T20:43:24.672918+02:00">
+            5月 <span class="m-date-day">25</span> 2023
+          </time>
+          Day 3 学习软件测试的必备知识——（测试基本流程和测试用例的设计）
+        </a></h1>
+        <h1>Day 3 软件测试核心知识——（基本流程和测试用例及测试用例设计方法）</h1>
+        <p>[TOC]</p>
+        <p><img alt="image-20230518141045711" src="imags/image-20230518141045711.png"></p>
+        <h1>一、软件测试的基本流程</h1>
+        <p><img alt="基本流程" src="imags/defense1-16842945168881.png"></p>
+        <blockquote>
+        <p>我们上一篇文章介绍了公 …</p></blockquote>
+      </header>
+      <div class="m-clearfix-l"></div>
+<!-- content -->
+<h1>Day 3 软件测试核心知识——（基本流程和测试用例及测试用例设计方法）</h1>
+<p>[TOC]</p>
+<p><img alt="image-20230518141045711" src="imags/image-20230518141045711.png"></p>
+<h1>一、软件测试的基本流程</h1>
+<p><img alt="基本流程" src="imags/defense1-16842945168881.png"></p>
+<blockquote>
+<p>我们上一篇文章介绍了公司的开发模型和测试模型，那是你在公司的工作的模式，这里</p>
+<p>的软件测试的基本流程是讲<strong>你面对测试任务时的工作模式或者说是方法论</strong>。</p>
+<p>就是告诉你如何面对测试任务并完美的完成该任务。</p>
+<p>（PS：我希望每位同学都能形成自己解决问题的方法论，那才是测试经验的具体化和个人最宝贵的价值体现）</p>
+</blockquote>
+<p><strong>需求分析阶段</strong>：</p>
+<ul>
+<li>阅读需求、理解需求，分析需求点，参与需求评审会议。</li>
+</ul>
+<p><strong>测试计划阶段</strong>：</p>
+<ul>
+<li>主要任务就是编写测试计划，参考软件需求规格说明书，项目总体计划，</li>
+<li>内容包括测试范围，进度安排，人力物力分配，整体测试策略的制定,风险评估与规避措施，</li>
+<li>参与测试计划的评审工作。</li>
+</ul>
+<p><strong>测试设计阶段</strong>：</p>
+<ul>
+<li>编写测试用例，参考需求分析、概要设计、详细设计，不明确的与开发、产品经理沟通。</li>
+<li>用例完成后进行评审</li>
+</ul>
+<p><strong>测试执行阶段</strong>：</p>
+<ul>
+<li>搭建环境准备数据，执行冒烟测试（预测试）然后进入正式测试（系统测试、回归测试、交叉测试、自由测试），遇到问题提交bug到缺陷管理平台，并对bug进行跟踪，直到被测试软件达到测试需求要求，没重大bug，测试结束。</li>
+</ul>
+<p><strong>评估阶段</strong>：</p>
+<ul>
+<li>出测试报告，对整个测试的过程和版本质量做一个详细的评估。</li>
+</ul>
+<h1>二、什么是测试用例？</h1>
+<h3>1. 测试用例定义</h3>
+<p>测试用例又叫做test case，是为某个特殊目标而编制的一组测试输入、执行条件以及预期结果,以便测试某个程序路径或核实是否满足某个特定需求。</p>
+<h3>2. 编写测试用例的原因</h3>
+<h4><strong>2.1 理清思路，避免遗漏</strong></h4>
+<p>如果测试的项目大而复杂，我们可以把项目功能细分，根据每一个功能通过编写用例的方式来整理我们测试系统的思路，避免遗漏掉要测试的功能点。</p>
+<h4><strong>2.2 跟踪测试进展</strong></h4>
+<p>通过编写测试用例，执行测试用例，我们可以很清楚的知道我们的测试进度。</p>
+<h4><strong>2.3 历史参考</strong></h4>
+<p>在我们所做的项目中，也许会有很多功能是相同或相近的，我们对这类功能设计了测试用例，便于以后我们遇到类似功能的时候可以做参考依据。</p>
+<h4><strong>2.4 规范作用</strong></h4>
+<p>我们测试一个系统不是一个人测一遍就算测完的，需要多人反复的进行测试，那么我们就需要测试用例来规范和指导我们的测试行为。</p>
+<h3>3. 测试用例的要素</h3>
+<h4>3.1. 测试用例八大要素</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">测试用例编号</th>
+<th style="text-align: center;">测试项目(测试模块)</th>
+<th style="text-align: center;">预置(前提)条件</th>
+<th style="text-align: center;">测试输入</th>
+<th style="text-align: center;">预期输出</th>
+<th style="text-align: center;">操作步骤</th>
+<th style="text-align: center;">测试用例标题</th>
+<th style="text-align: center;">级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">ST-子项名-01</td>
+<td style="text-align: center;">手机登录</td>
+<td style="text-align: center;">手机正常使用</td>
+<td style="text-align: center;">手机号</td>
+<td style="text-align: center;">正常登录</td>
+<td style="text-align: center;">输入手机号并确认</td>
+<td style="text-align: center;">测试能否手机登录成功</td>
+<td style="text-align: center;">重要</td>
+</tr>
+</tbody>
+</table>
+<h5><strong>1). 测试用例编号</strong></h5>
+<p>编号由字符和数字组合成的字符串,用例编号具有唯一性、容易识别, 如下表</p>
+<p><strong>测试项目</strong></p>
+<p>测试的项目属于哪个项目或者被测试的需求、被测的模块、被测的单元等等</p>
+<h5><strong>3). 预置条件</strong></h5>
+<p>执行当前测试用例需要的前提条件,如果前提条件不满足,则后面的测试步骤不能进行或者得不到预期结果</p>
+<h5><strong>4). 测试输入</strong></h5>
+<p>测试用例执行过程中需要加工的外部信息.根据测试用例的具体条件有手工输入、数据库等</p>
+<h5><strong>5). 预期输出</strong></h5>
+<p>测试用例的预期输出结果,包括返回值内容、界面响应结果等.</p>
+<h5><strong>6). 操作步骤</strong></h5>
+<p>执行当前测试用例需要经过的操作步骤，需要明确的给出一个步骤的描述，测试用例执行人员可以根据该步骤完成测试用例执行</p>
+<h5><strong>7). 测试用例标题</strong></h5>
+<p>对测试用例的简单描述。用概括的语言描述该测试用例的测试点。每个测试用例的标题不能够重复，因为每个测试用例的测试点事不一样的。</p>
+<h5><strong>8). 级别</strong></h5>
+<p>对于测试用例的重要程度的区分.包含如下几种:</p>
+<ul>
+<li>高级别</li>
+</ul>
+<p>保证系统基本功能、核心业务、重要特性、实际使用频率比较高的用例</p>
+<ul>
+<li>中级别</li>
+</ul>
+<p>重要程度介于高和低之间的测试用例</p>
+<ul>
+<li>低级别</li>
+</ul>
+<p>实际使用的频率不高，对系统业务功能影响不大的模块或功能的测试用例</p>
+<h4>3. 2. 其他要素</h4>
+<ol>
+<li><strong>用例的设计者</strong>:能准确找到测试用例的设计人员,对用例修改时能方便找到人员</li>
+<li><strong>用例设计日期</strong>: 方便检查用例的设计进度</li>
+<li><strong>对应的开发人员</strong>: 出现bug后能及时找到相应的人员进行修复</li>
+<li><strong>测试结果</strong>: 执行用例最后执行的结果, 包括:pass、fail、block</li>
+<li><strong>测试类型</strong>: 功能、性能、压力等等</li>
+</ol>
+<h1>三、测试用例设计方法</h1>
+<p>掌握常用测试用例设计方法,再结合测试用例的要素能给快速的实现测试用例的设计和编写.但是由于软件系统大小的不同我们不可能把所有的单个或组合的情况都进行测试,所以我们测试时应该根据不同的场景设计不同的测试用例,尽可能的覆盖到全部需要测试的情况.</p>
+<p>常用的测试用例设计方法有: <strong>等价类划分话、边界值分析法、判定表法、正交验证法、错误推测法、场景法、因果图法、 功能图法</strong>。</p>
+<blockquote>
+<p>记忆方法：等边工（功）场因判正错</p>
+</blockquote>
+<h3>等价类划分法</h3>
+<h4><strong>1. 等价类划分的介绍和概念定义</strong></h4>
+<ul>
+<li><strong>划分</strong></li>
+</ul>
+<p>指互不相交的一组子集，这些子集的并是整个集合。</p>
+<p>对测试的意义：完备性和无冗余性。</p>
+<ul>
+<li><strong>等价类</strong></li>
+</ul>
+<p>等价类是指某个输入域的子集合。在该子集合中，各个输入数据对于揭露程序中的错误都是等效的，具有等价特性。</p>
+<ul>
+<li><strong>等价类合理地假设</strong></li>
+</ul>
+<p>测试某等价类的代表值就等于对这一类其它值的测试。</p>
+<ul>
+<li><strong>等价类划分</strong></li>
+</ul>
+<p>在测试中最完美的测试是使用<strong>穷举测试</strong>,把所有的数据都测一遍.但是实际工作中不能采用,因为效率太低了.</p>
+<p>理想的测试时:使用最少的测试数据,达到最好的测试质量.</p>
+<p><strong>等价类划分法的测试思想是:</strong></p>
+<p>从大量数据里划分范围（每个范围内的数据测试效果是等价的所以每个范围是一个等价类），然后从每个范围中挑选代表数据，这些代表数据能反应这个范围内数据的测试结果。</p>
+<p><strong>官方定义:</strong></p>
+<p>等价类测试方法是<strong>把所有可能的输入数据</strong>，即程序的输入域划分成若干部分，<strong>然后从每一部分中选取少数有代表性的数据作为测试用例</strong>。使用等价类划分方法设计测试用例要经历划分等价类（列出等价类表）和选取测试用例两步，它将不能穷举的测试过程进行合理分类，从而保证设计出来的测试用例具有完整性和代表性。</p>
+<h4>1.1. 类型划分</h4>
+<p>等价类的类型划分分为:<strong>有效等价类</strong>和<strong>无效等价类</strong>.</p>
+<p><strong>(1). 有效等价类</strong></p>
+<p>有效等价类是指对对于程序的规格说明来说是<strong>合理</strong>的、有意义的输入数据构成的集合.利用<strong>有效等价类可检验程序是否实现了规格说明中所规定的功能和性能.</strong></p>
+<p><strong>(2). 无效等价类</strong></p>
+<p>无效等价类指对程序的规格说明是<strong>不合理的、无意义</strong>的输入数据所构成的集合。对于具体的问题，无效等价类至少应有一个，也可能有多个。<strong>利用无效等价类可校验程序对于无效数据的处理能力,检测程序的健壮性、容错能力</strong></p>
+<p><strong>注意:</strong></p>
+<p><strong>设计测试用例时,要同时考虑这两种等价类。因为软件不仅要能接收合理的数据,也要能经受意外的考验，这样的测试才能确保软件具有更高的可靠性。</strong></p>
+<h4><strong>2. 设计测试用例</strong></h4>
+<p>步骤:</p>
+<ul>
+<li>确定需求</li>
+<li>确定有效等价类和无效等价类</li>
+<li>对每条等价类设计测试用例</li>
+</ul>
+<h4><strong>3. 案例</strong></h4>
+<p>要求:使用等价类划分法测试QQ账号的合法符合规范</p>
+<table>
+<thead>
+<tr>
+<th>明确需求</th>
+<th>输入6-10位的自然数</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>有效等价类</strong></td>
+<td>有效等价类</td>
+<td>自然数个数大于6小于10个</td>
+</tr>
+<tr>
+<td><strong>无效等价类</strong></td>
+<td>无效等价类</td>
+<td>小于6个、大于10个、中文、空格、英文、特殊字符、小数</td>
+</tr>
+<tr>
+<td><strong>设计测试用例</strong></td>
+<td>有效等价类测试用例</td>
+<td>无效等价类测试用例</td>
+</tr>
+</tbody>
+</table>
+<p><strong>测试用例</strong></p>
+<table>
+<thead>
+<tr>
+<th>用例编号</th>
+<th>等价类划分</th>
+<th>输入</th>
+<th>预期结果</th>
+<th>测试结果</th>
+<th>重要级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UT-QQ账号-01</td>
+<td>有效等价类</td>
+<td>12345678</td>
+<td>正确</td>
+<td>正确</td>
+<td>高级</td>
+</tr>
+<tr>
+<td>UT-QQ账号-02</td>
+<td>无效等价爱类</td>
+<td>12</td>
+<td>错误</td>
+<td>error</td>
+<td>高级</td>
+</tr>
+<tr>
+<td>….</td>
+<td>…..</td>
+<td>….</td>
+<td>….</td>
+<td>….</td>
+<td>….</td>
+</tr>
+</tbody>
+</table>
+<h2>边界值测试法</h2>
+<h3>1. 介绍</h3>
+<p>边界值分析法就是对输入或输出边界值进行测试的,也是一种黑盒测试.</p>
+<p>边界值分析法通常作为等价类划分法的补充,其测试用例来自等价类的边界;长期的经验得知,大量的错误是发现在输入或输出范围的边界上，而不是发生再输入输出范围的内部，因此针对各种边界情况设计测试用例，可以查出更多错误.</p>
+<blockquote>
+<p>和等价类划分法的区别:</p>
+<ul>
+<li>是等价类划分法的补充</li>
+<li>等价类划分法可以挑选等价范围内任意一个数据作为代表,边界值分析法要求每个边界值都要作为测试条件</li>
+<li>边界值分析法不仅考虑输入条件,同样考虑输出产生的测试情况</li>
+</ul>
+</blockquote>
+<p>常见的边界值:</p>
+<ul>
+<li><strong>边界点(上点):</strong>输入范围的边界点</li>
+<li><strong>离点:</strong> 离边界点最近的点</li>
+<li><strong>内点:</strong> 输入范围内的任意一个点</li>
+</ul>
+<blockquote>
+<p>对于边界值的说明:</p>
+<p>边界值数据本质上属于等价类的范畴,测试时确实是一种冗余（重复），但是为了更好的测试质量（边界值特别容易出bug），边界值必须要单独测,适当必要的冗余是可以接受的.</p>
+</blockquote>
+<p>举例: 0-100内的整数</p>
+<table>
+<thead>
+<tr>
+<th>上点</th>
+<th>0, 100</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>离点</td>
+<td>1, 99; -1,101; 1,101; 0, 99;</td>
+</tr>
+<tr>
+<td>内点</td>
+<td>34</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 使用边界值设计测试用用例</h3>
+<p><strong>2.1 步骤</strong>:</p>
+<ul>
+<li>明确需求</li>
+<li>确定有效和无效等价类</li>
+<li>明确输入条件中的边界值</li>
+<li>编写测试用例</li>
+</ul>
+<p><strong>注意:</strong> 边界值法应用时，如果测试时间紧张，应该优先测试最大值和最小值</p>
+<p><strong>2.2 案例</strong></p>
+<p>要求:测试qq账号是否符合规范</p>
+<ol>
+<li>需求: qq号是6-10位的整数</li>
+<li>确定边界值</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>上点</th>
+<th>6个, 10个</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>离点</strong></td>
+<td>5个, 9个, 7个,11个</td>
+</tr>
+<tr>
+<td>内点</td>
+<td>8个</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>编写测试用例</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>用例编号</th>
+<th>等价类划分</th>
+<th>输入</th>
+<th>预期结果</th>
+<th>实际结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UT-QQ是否符合规范-01</td>
+<td>有效等价类</td>
+<td>6个</td>
+<td>正确</td>
+<td></td>
+</tr>
+<tr>
+<td>UT-QQ是否符合规范-02</td>
+<td>有效等价类</td>
+<td>10个</td>
+<td>正确</td>
+<td></td>
+</tr>
+<tr>
+<td>UT-QQ是否符合规范-03</td>
+<td>无效等价类</td>
+<td>5个</td>
+<td>错误</td>
+<td></td>
+</tr>
+<tr>
+<td>UT-QQ是否符合规范-04</td>
+<td>有效等价类</td>
+<td>7个</td>
+<td>正确</td>
+<td></td>
+</tr>
+<tr>
+<td>UT-QQ是否符合规范-05</td>
+<td>无效等价类</td>
+<td>11个</td>
+<td>错误</td>
+<td></td>
+</tr>
+<tr>
+<td>UT-QQ是否符合规范-06</td>
+<td>有效等价类</td>
+<td>9个</td>
+<td>正确</td>
+<td></td>
+</tr>
+<tr>
+<td>UT-QQ是否符合规范-07</td>
+<td>有效等价类</td>
+<td>8个</td>
+<td>正确</td>
+<td></td>
+</tr>
+<tr>
+<td>UT-QQ是否符合规范-08</td>
+<td>无效等价类</td>
+<td>特殊符号,例如: #,¥ *、空格等</td>
+<td>错误</td>
+<td></td>
+</tr>
+<tr>
+<td>UT-QQ是否符合规范-09</td>
+<td>无效等价类</td>
+<td>数字+特殊符号</td>
+<td>错误</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>判定表法</h2>
+<h4>1. 使用场景</h4>
+<p>适合于有多个输入和对个输出,输入和输出之间有相互的组合关系, 输入输出之间有相互的制约和依赖关系</p>
+<h3>2. 定义</h3>
+<p><strong>判定表也称决策表, 是分析和表达多逻辑条件下执行不同操作的工具.</strong></p>
+<p>它能够将复杂的问题按照各种可能的情况全部列举出来，简明并避免遗漏。因此,利用判定表能够设计出完整的测试用例集合。在一些数据处理问题当中，某些操作的实施依赖于多个逻辑条件的组合，即：针对不同逻辑条件的组合值，分别执行不同的操作。判定表适合于处理这类问题。</p>
+<h3>3. 组成</h3>
+<p>判定表是由条件桩、动作桩、条件项、动作项四部分组成,如下图.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">条件桩</th>
+<th style="text-align: center;">条件项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">动作桩</td>
+<td style="text-align: center;">动作项</td>
+</tr>
+</tbody>
+</table>
+<p>1） 条件桩（Condition Stub）：列出了问题得所有条件。通常认为列出的条件的次序无关紧要。</p>
+<p>2） 动作桩（Action Stub）：列出了问题规定可能采取的操作。这些操作的排列顺序没有约束。</p>
+<p>3） 条件项（Condition Entry）：列出针对它左列条件的取值。在所有可能情况下的真假值。</p>
+<p>4） 动作项（Action Entry）：列出在条件项的各种取值情况下应该采取的动作。</p>
+<h3><strong>4.规则及规则合并</strong></h3>
+<h4>4.1 规则</h4>
+<p><strong>任何一个条件组合的特定取值及其相应要执行的操作称为规则</strong>。</p>
+<p><strong>在判定表中贯穿条件项和动作项的一列就是一条规则</strong>。显然判定表中列出多少组条件取值，也就有多少条规则，既条件项和动作项有多少列。</p>
+<h4>4.2 化简</h4>
+<p>规则合并有两条或多条规则具有相同动作,并且其条件项之间存在着极为相似的关系。</p>
+<h3>5. 测试案例设计</h3>
+<p>步骤:</p>
+<ol>
+<li>明确规则个数</li>
+<li>列出所有条件桩和动作桩</li>
+<li>填入条件项</li>
+<li>填入动作项,等到初始判定表</li>
+<li>简化,合并相似规则</li>
+</ol>
+<h3>6. 案例</h3>
+<h4>1. 案例1</h4>
+<p>问题要求:对于功率大于50马力的机器、维修记录不全或运行10年以上的机器,应优先维修.</p>
+<h5>测试案例设计思想</h5>
+<p><strong>1.1 . 明确规则个数</strong></p>
+<p>这里有三个条件:大于50马力、维修记录不全、运行10年以上, 每个条件有2种取值,所以有八种规则.</p>
+<p><strong>1.2. 列出条件桩和动作桩</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">条件桩</th>
+<th style="text-align: center;">功率大于50马力?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">维修记录不全?</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">运行超过10年?</td>
+</tr>
+<tr>
+<td style="text-align: center;">动作桩</td>
+<td style="text-align: center;">优先处理</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.3. 填入条件项</strong></p>
+<p><strong>1.4. 填入动作项等到初始判定表</strong></p>
+<table>
+<thead>
+<tr>
+<th>条件桩</th>
+<th>条件项</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>功率大于50马力?</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td></td>
+<td>维修记录不全?</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td></td>
+<td>运行10年以上?</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>动作桩</td>
+<td>优先处理?</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>其他处理</td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.5 . 简化判定表</strong></p>
+<p>通过初始的判定表我们发现:</p>
+<ol>
+<li>在三个条件中有2个不满足时,剩下的一个完全没有参考价值,可以进行简化.</li>
+</ol>
+<p>只有功率大于50马力、维修记录全的、运行十年以上的才优先处理;</p>
+<p>其他处理的情况是:满足动力大于50马力、维修功能完全、没有运行10年以上中只要满足两项</p>
+<ol>
+<li>简化后为</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>条件桩</th>
+<th>条件项</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>功率大于50马力?</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+</tr>
+<tr>
+<td></td>
+<td>维修记录不全?</td>
+<td>Y</td>
+<td>N</td>
+<td>-</td>
+<td>-</td>
+<td>N</td>
+</tr>
+<tr>
+<td></td>
+<td>运行10年以上?</td>
+<td>-</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>动作桩</td>
+<td>优先处理?</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>其他处理</td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意:</strong> “-”表示取值与否不影响触发的动作.即,不影响规则</p>
+<h4>2. 案例2.</h4>
+<p>公交一卡通自动充值系统要求:</p>
+<ul>
+<li>系统只接收50或100元纸币，一次只能使用一张纸币，一次充值金额只能为50元或100元。</li>
+<li>若输入50元纸币，并选择充值50元，完成充值后退卡，提示充值成功；</li>
+<li>若输入50元纸币，并选择充值100元，提示错误，并退回50元；</li>
+<li>若输入100元纸币，并选择充值50元，完成充值后退卡，提示充值成功，找零50元；</li>
+<li>若输入100元纸币，并选择充值100元，完成充值后退卡，提示充值成功；</li>
+<li>若输入纸币后在规定时间内不选择充值按钮，找零，并提示错误；</li>
+<li>若选择充值按钮后不输入货币,提示错误</li>
+</ul>
+<h5>测试案例实现如下</h5>
+<p><strong>2.1 明确规则个数</strong></p>
+<table>
+<thead>
+<tr>
+<th>规则个数(条件桩)</th>
+<th>输入50元</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>输入100元</td>
+</tr>
+<tr>
+<td></td>
+<td>充值50元</td>
+</tr>
+<tr>
+<td></td>
+<td>充值100元</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.2. 列出条件桩和动作桩</strong></p>
+<table>
+<thead>
+<tr>
+<th>动作桩</th>
+<th>提示充值成功</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>充值成功并退卡</td>
+</tr>
+<tr>
+<td></td>
+<td>退卡</td>
+</tr>
+<tr>
+<td></td>
+<td>找零</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.3. 列入条件项</strong></p>
+<p><strong>2.4. 填入动作项,等待初始的判定表</strong></p>
+<table>
+<thead>
+<tr>
+<th>输入条件</th>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>输入50元</td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>输入100元</td>
+<td></td>
+<td></td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>充值50元</td>
+<td>Y</td>
+<td></td>
+<td>Y</td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>充值100元</td>
+<td></td>
+<td>Y</td>
+<td></td>
+<td>Y</td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>动作桩</td>
+<td>充值成功并退卡</td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>提示充值成功</td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>找零</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>提示错误</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.5 简化</strong></p>
+<p>这个案例中每个条件都是独立的,没有可以简化的</p>
+<p><strong>2.6.测试用例设计</strong></p>
+<p>上面的表中每一条就是一个测试用例.</p>
+<p><img alt="公交一卡通测试用例" src="imags/decision_table_testcase-16843037935612.png"></p>
+<h2>因果图法</h2>
+<h3>1. 概述</h3>
+<p>因果图法是一种<strong>利用图解法分析输入条件、输出结果的各种组合情况,</strong>从而设计测试用例的方法.</p>
+<p>因果图法<strong>适用于</strong>有多个输入和多个输出，而且输入和输入之间有相互的组合关系，输入和输出之间有相互的制约和依赖关系.</p>
+<p>使用场景和判定表法是一样的.</p>
+<blockquote>
+<p>在界面中有多个控件，控件之间有组合或限制关系，不同的输入组合会对应不同的输出结果，如果想弄清楚不同的输入组合到底对应哪些输出结果，可以使用因果图/判定表法。(因果图/判定表法比较适合测试组合数量较少的情况，一般少于20种)</p>
+<p>和判定表法的不同:</p>
+<ul>
+<li>因果图，只是一个用图形表示，表示因果方式不同而已</li>
+</ul>
+<p>关联:</p>
+<ul>
+<li>判定表和因果图是等价的，判定表是因果图的简化版。</li>
+</ul>
+</blockquote>
+<h3>2.核心</h3>
+<h4>2.1 因果图</h4>
+<p>原因(因): 输入条件</p>
+<p>结果(果): 输出结果</p>
+<p>因果图: 就是通过画图的方式来表示输入条件（因）和输出结果（果）之间的关系。</p>
+<h4>2.2 因果图中的图形符号</h4>
+<p><strong>含义:</strong> 原因出现结果出现,原型不出现,结果不出现. 例如:若c=10,则d=0.</p>
+<p><strong>(2). 非 (~)</strong></p>
+<p><strong>含义:</strong> 若原因出现,则结果不出现;原因不出现则结果出现.例如: 搜索联系人,若有就不提示错误.</p>
+<p><strong>(3). 或 (v)</strong></p>
+<p><strong>含义:</strong> 若几个原因中有一个出现,这结果出现;若都不出现,结果不出现.</p>
+<p><strong>(4). 与(^)</strong></p>
+<p><strong>含义:</strong> 若几个原因都出现结果才出现,否则,结果不出现.</p>
+<h4>2.3 约束</h4>
+<p>输入状态相互之间还可能存在某些互相依赖的关系,称为约束. 输出状态之间也存在某些约束.在因果图中使用特定符号表示这些约.</p>
+<p>束.</p>
+<p><strong>(1). 输入条件约束</strong></p>
+<ul>
+<li>E(exclude) 约束: a和b中至多有一个为1.</li>
+<li>I(include) 包含: a、b和c中至少有一个必须是1.</li>
+<li>R(required) 要求: a是1时，b必须是1.</li>
+<li>O(only) 唯一: a和b必须有一个，且仅有1个为1.</li>
+</ul>
+<p><strong>(2). 输出条件约束</strong></p>
+<ul>
+<li>M(mandatory) 强制: 若结果a是1,结果b强制为0.</li>
+</ul>
+<h3>3. 设计测试用例</h3>
+<p><strong>步骤</strong></p>
+<ol>
+<li>了解需求,找出所有的输入条件(因)</li>
+<li>找出所有的输出结果(果)</li>
+<li>画因果图、填判定表</li>
+<li>判定表中每个规则就是一条测试用例</li>
+</ol>
+<h3>4.案例</h3>
+<p>问题描述: 如想对文件进行修改,输入的第一列字符必须是a或b,第二列字符必须是一个数字,如果第一列字符不正确则给出信息L,如果第二个字符不正确,则给出字符M</p>
+<p><strong>4.1 了解需求,找出输入条件</strong></p>
+<p>1— — 第一列字符是a</p>
+<p>2 — — 第一列值符为b、</p>
+<p>3 — — 第二列必须是数字</p>
+<p><strong>4.2 找出所有的输出结果</strong></p>
+<p>结果:</p>
+<p>4— 信给出息l</p>
+<p>5— 信息m</p>
+<p>6— 修改文件</p>
+<p><strong>4.3 画因果图、填判定表</strong></p>
+<p>通过分析得出,原因1和原因2不可能同时出现,添加约束E. 设置9为中间点.</p>
+<p><strong>因果图如下:</strong></p>
+<p><img alt="因果图" src="imags/cause-16843039514694.png"></p>
+<p><strong>判定表法</strong></p>
+<table>
+<thead>
+<tr>
+<th>条件(原因)</th>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>1</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td></td>
+<td>2</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td></td>
+<td>3</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>中间值</td>
+<td>9</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>动作(结果)</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>5</td>
+<td></td>
+<td>Y</td>
+<td></td>
+<td>Y</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>6</td>
+<td>Y</td>
+<td></td>
+<td>Y</td>
+<td></td>
+<td></td>
+<td>Y</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意:</strong> 第7列和第8列不可能出现,所以排除这两种情况.</p>
+<p><strong>4.4 根据判定表设计测试用例</strong></p>
+<p><img alt="测试用例" src="imags/cause_testcase-16843038413103.png"></p>
+<h2>正交法</h2>
+<p><img alt="allpairs1-16843040158577" src="imags/allpairs1-16843040158577.png"></p>
+<p>通过分析我们发现,对于图中的程序而言,我们要设计81条测试用例,那么有没有一种方法能够使用最小的测试过程集合获得最大的测试覆盖率呢?</p>
+<h3>1. 概述</h3>
+<h4>1.1 定义</h4>
+<p>正交法,也叫<strong>正交实验法</strong>或者<strong>正交排列法</strong>, <strong>就是使用最小的测试过程集合获得最大的测试覆盖率</strong>。</p>
+<p>“正交实验”是研究多因素、多水平的一种实验方法,它利用正交表来对实验进行设计,通过少数实验代替全面的实验.</p>
+<p>在一项实验中,把影响试验结果的量称为试验<strong>因素(因子)</strong>，简称<strong>因素</strong>。因素可以理解为试验过程中的<strong>自变量</strong>，试验结果可以看成因素的函数。在试验过程中，每一个因素可以处于不同的状态或状况，把因素所处的状态或状况，称为<strong>因素的水平</strong>，<strong>简称水平</strong>。</p>
+<blockquote>
+<p>1992年AT&amp;T公司,针对某一个软件做了一个回归测试：</p>
+<p>在18个周（4个半月）的时间范围内测试1500条测试用例。后来开发时间推迟了，测试时间被压缩了。测试经理想了一个办法，两个人在8个周（2个月）测试1000条测试用例。但是测试经理不能保证该软件就是完全没有问题的。后来他决定用正交表去重新设计一下测试用例，422条测试用例，42个bug。测试完毕后，软件上线了。在上线的两年时间内。凡事被测试到的领域，都没有发现任何问题。后来呢，他从头到尾有总结了一番：有可能只会测试出32条bug。</p>
+<p>前后对比：</p>
+<ul>
+<li>测试用例的条数少了</li>
+<li>测试出来bug的数量多了</li>
+</ul>
+</blockquote>
+<h4>1.2 正交表的构成</h4>
+<p>˙正交表时一种特制的表, 一般记为$$Ln(m^k)$$</p>
+<ul>
+<li>n是表的行数,也就是需要测试组合的次数</li>
+<li>k是表的行数, 表示控件个数(因素的个数,或因子的个数)</li>
+<li>m是每个控件包含的取值个数(各因素的水平数,即各因素的状态数)</li>
+</ul>
+<p><strong>例如:</strong> $$L9(3^4)$$ 正交表如下</p>
+<p><img alt="正交表2" src="imags/allpairs2-16843040087446.png"></p>
+<h3>2. 使用正交法设计测试用例</h3>
+<h4>2.1 步骤</h4>
+<ol>
+<li>根据需求把空间即其取值列举出来</li>
+<li>根据空间和空间的取值个数,选择一个合适的正交表</li>
+<li>根据控件的个数,选择正交表的次幂,也就是正交表中包含的最大值, 例如,4个控件,选择4次幂</li>
+<li>根据控件取值个数,选择正交表的底,也就是正交表包含的最大值, 例如, 每个控件有3个取值,底是3</li>
+<li>把控件及其取值映射到正交表中</li>
+<li>把控件名字分别映射到正交表的列名位置</li>
+<li>把正交表中每一列的数字分别用对应的控件取值替代</li>
+<li>根据正交表,编写测试用例</li>
+</ol>
+<h4>2.2 案例</h4>
+<p>实现“字符属性设置”的测试用例编写</p>
+<p><strong>(1). 列举因子表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">字体</th>
+<th style="text-align: center;">字符样式</th>
+<th style="text-align: center;">字体颜色</th>
+<th style="text-align: center;">字号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">仿宋</td>
+<td style="text-align: center;">粗体</td>
+<td style="text-align: center;">红色</td>
+<td style="text-align: center;">20号</td>
+</tr>
+<tr>
+<td style="text-align: center;">楷体</td>
+<td style="text-align: center;">斜体</td>
+<td style="text-align: center;">绿色</td>
+<td style="text-align: center;">30号</td>
+</tr>
+<tr>
+<td style="text-align: center;">华文彩云</td>
+<td style="text-align: center;">下划线</td>
+<td style="text-align: center;">蓝色</td>
+<td style="text-align: center;">40号</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(2) 确定使用的正交表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">确定采用的正交表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">$$L9(3^4)$$</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(3). 把控件及其取值映射到正交表中</strong></p>
+<p><img alt="正交表3" src="imags/allpairs3-16843040005125.png"></p>
+<p><strong>(4). 编写测试用例</strong></p>
+<p>上图正交表每一行都是一条测试用例,, 此处仅列出2条</p>
+<table>
+<thead>
+<tr>
+<th>用例编号</th>
+<th>输入</th>
+<th>预期结果</th>
+<th>实际结果</th>
+<th>是否是bug</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UT-设置字符子项测-01</td>
+<td>字体:仿宋; 字符样式: 粗体; 颜色:红色; 字号:20</td>
+<td>仿宋、 粗体、 红色、20号</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>UT-设置字符子项测-02</td>
+<td>字体:仿宋; 字符样式: 粗体; 颜色:红色; 字号:30</td>
+<td>仿宋、 粗体、 红色、20号</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>3. 小结</h3>
+<h4>3.1 使用场景</h4>
+<ul>
+<li>需求中条件的组合量比较大的时候</li>
+<li>需求两个两个相互组合的时候</li>
+</ul>
+<h4>3.2 局限性</h4>
+<p>正交表的个数有限,一般要求每个控件的取值相等,但是这在实际中很难应用,所以在实际使用时要进行取舍</p>
+<ul>
+<li>对于控件个数,如果没有,就选择一个接近的</li>
+<li>对于控制的取值,应该<strong>少数服从多数</strong>, 有更多空间的取值一样</li>
+</ul>
+<h2>场景法</h2>
+<h3>1. 概述</h3>
+<h4>1.1 为什么使用场景法设计测试用例</h4>
+<p>大多数业务软件由后台管理（比如：用户管理、角色管理、权限管理等等各种管理）和工作流等几个部分组成。终端用户，期望软件能够实现业务需求，而不是简单的功能的组合。对于单点功能利用等价类、边界值、判定表用例设计方法能够解决大部分问题。涉及业务流程的软件系统，采用场景法比较合适。</p>
+<p>总之, <strong>对于多个功能组合测试的场景适合使用场景法</strong>, 所以场景测试,也是业务场景组合测试.</p>
+<h4>1.2 概念</h4>
+<p><img alt="场景流程图" src="imags/scense-16843040398128.png"></p>
+<p>场景业务流通常分为: 基本流、备选流、异常流程</p>
+<p><strong>(1) 基本流</strong></p>
+<p>基本流表示通过业务流程时输入都正确，能达到目标的流程</p>
+<p><strong>(2) 备选流</strong></p>
+<p>备选流表示通过业务流程时输入错误（或者操作错误）导致流程存在反复，但是经过纠正后仍能达到能达到目标的流程.（插卡--&gt;输入错误密码--》输入正确密码--》输入金额--》取款--》取卡）</p>
+<p><strong>(3) 异常流</strong></p>
+<p>异常流表示通过业务流程时输入错误（或者操作错误）产生异常终止流程</p>
+<h3>2. 使用场景法设计测试用例</h3>
+<h4>1. 步骤</h4>
+<ol>
+<li>分析需求,确定基本流程、备选流程、异常流程</li>
+<li>绘制流程图,确定流程路径, 根据流程图生成不同的场景</li>
+<li>每一个场景就是一条测试用例</li>
+</ol>
+<h4>2. 案例</h4>
+<h5>2.1 需求描述</h5>
+<p>用户网上购买商品, 整个订购过程为：用户登录到网站后，进行书籍的选择，当选好自己心仪的书籍后进行订购，这时把所需图书放进购物车，等进行结帐的时候，用户需要登录自己注册的帐号，登录成功后，进行结帐并生成订单，整个购物过程结束。</p>
+<h5>2.2 测试用例实现</h5>
+<p><strong>(1). 分蓄需求,确定业务流程(基本流程、备选流程、异常流程)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">基本流程</th>
+<th>用户登录到网站，书籍的选择，进行订购，把所需图书放进购物车，等进行结帐的时候，登录自己的帐号，登录成功后，生成订单.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">备选流程1</td>
+<td>账号不存在</td>
+</tr>
+<tr>
+<td style="text-align: center;">备选流程2</td>
+<td>账号错误</td>
+</tr>
+<tr>
+<td style="text-align: center;">备选流程3</td>
+<td>密码错误</td>
+</tr>
+<tr>
+<td style="text-align: center;">备选流程4</td>
+<td>没有选购书籍</td>
+</tr>
+<tr>
+<td style="text-align: center;">备选流程5</td>
+<td>退出系统</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(2). 绘制流程图,确定流程路径, 根据流程图生成不同的场景</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">场景1-购物成功</th>
+<th style="text-align: center;">基本流程</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">场景2-账号不存在</td>
+<td style="text-align: center;">基本流程</td>
+<td style="text-align: center;">备选流程1</td>
+</tr>
+<tr>
+<td style="text-align: center;">场景3-账号错误</td>
+<td style="text-align: center;">基本流程</td>
+<td style="text-align: center;">备选流程2</td>
+</tr>
+<tr>
+<td style="text-align: center;">场景4-密码错误</td>
+<td style="text-align: center;">基本流程</td>
+<td style="text-align: center;">备选流程3</td>
+</tr>
+<tr>
+<td style="text-align: center;">场景5-没有选购书籍</td>
+<td style="text-align: center;">基本流程</td>
+<td style="text-align: center;">备选流程4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(3). 编写测试用例, 对于每一个场景都需要确定测试用例。</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">测试用例编号</th>
+<th style="text-align: center;">输入条件</th>
+<th style="text-align: center;">账号</th>
+<th style="text-align: right;">密码</th>
+<th style="text-align: center;">是否选购书籍</th>
+<th style="text-align: center;">预期结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">ST-系统测试子项-1</td>
+<td style="text-align: center;">场景1</td>
+<td style="text-align: center;">张三</td>
+<td style="text-align: right;">admin@123</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">购物成功</td>
+</tr>
+<tr>
+<td style="text-align: center;">ST-系统测试子项-2</td>
+<td style="text-align: center;">场景2</td>
+<td style="text-align: center;">李四</td>
+<td style="text-align: right;">N</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">提示账号不存在</td>
+</tr>
+<tr>
+<td style="text-align: center;">ST-系统测试子项-3</td>
+<td style="text-align: center;">场景3</td>
+<td style="text-align: center;">赵六</td>
+<td style="text-align: right;">admin</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">提示账号错误, 返回基本流程</td>
+</tr>
+<tr>
+<td style="text-align: center;">ST-系统测试子项-4</td>
+<td style="text-align: center;">场景4</td>
+<td style="text-align: center;">张三</td>
+<td style="text-align: right;">Admin123&amp;……</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">提示密码错误,返回基本流程</td>
+</tr>
+<tr>
+<td style="text-align: center;">ST-系统测试子项-5</td>
+<td style="text-align: center;">场景5</td>
+<td style="text-align: center;">张三</td>
+<td style="text-align: right;">admin@123</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">提示没有选购书籍, 返回基本流程</td>
+</tr>
+</tbody>
+</table>
+<h3>3. 小结</h3>
+<p>场景流程比较适合于涉及到业务需求的场景, 能够多个功能联合进行测试,不是单个功能进行测试.</p>
+<h2>功能图法</h2>
+<h3>1.1 简介</h3>
+<p>一个程序的功能说明通常由动态说明和静态说明组成.</p>
+<p><strong>动态说明描述了输入数据的次序或转移的次序.静态说明描述了输入条件与输出条件之间的对应关系.</strong></p>
+<p>对于较复杂的程序,由于存在大量的组合情况,因此,仅用静态说明组成的规格说明对于测试来说往往是不够的.必须用动态说明来补充功能说明.<strong>功能图方法是用功能图FD形式化地表示程序的功能说明,并机械地生成功能图的测试用例.</strong></p>
+<p><strong>功能图模型由状态迁移图和逻辑功能模型构成</strong>.</p>
+<ul>
+<li>状态迁移图用于表示输入数据序列以及相应的输出数据.在状态迁移图中,由输入数据和当前状态决定输出数据和后续状态.</li>
+<li>逻辑功能模型用于表示在状态中输入条件和输出条件之间的对应关系.逻辑功能模型只适合于描述静态说明,输出数据仅由输入数据决定.测试用例则是由测试中经过的一系列状态和在每个状态中必须依靠输入/输出数据满足的一对条件组成.功能图方法其实是是一种黑盒白盒混合用例设计方法。</li>
+</ul>
+<blockquote>
+<p>功能图方法中,要用到逻辑覆盖和路径测试的概念和方法,其属白盒测试方法中 的内容.</p>
+<p>逻辑覆盖是以程序内部的逻辑结构为基础的测试用例设计方法.该方法要求测试人员对程序的逻辑结构有清楚的了解.</p>
+<p>由于覆盖测试的目标不同,逻辑覆盖可分为:</p>
+<ul>
+<li>语句覆盖</li>
+<li>判定覆盖</li>
+<li>判定-条件覆盖</li>
+<li>条件组合覆盖</li>
+<li>路径覆盖</li>
+</ul>
+</blockquote>
+<h3>1.2 组成</h3>
+<p>功能图由状态迁移图和布尔函数组成.状态迁移图用状态和迁移来描述.一个状态指出数据输入的位置（或时间）,而迁移则指明状态的改变.同时要依靠判定表或因果图表示的逻辑功能.</p>
+<p>例如下面的ATM功能图法测试</p>
+<p><img alt="功能图法" src="imags/error.png"></p>
+<h3>1.3 设计测试用例</h3>
+<h4>(1). 生成测试用例的规则</h4>
+<p>从功能图生成测试用例,得到的测试用例数是可接受的. 问题的关键的是如何从状态迁移图中选取测试用例. 若用节点代替状态,用弧线代替迁移,则状态迁移图就可转化成一个程序的控制流程图形式.问题就转化为程序的路径测试问题（如白盒测试）问题了.</p>
+<p>为了把状态迁移（测试路径）的测试用例与逻辑模型（局部测试用例）的测试用例组合起来,从功能图生成实用的测试用例,须定义下面的规则.</p>
+<p><strong>在一个结构化的状态迁移（SST）中,定义三种形式的循环:顺序,选择和重复.</strong>但分辨一个状态迁移中的所有循环是有困难的.</p>
+<h4>(2). 步骤</h4>
+<ul>
+<li>生成局部测试用例: 在每个状态中,从因果图生成局部测试用例.局部测试用例由输入数据与对应的输出数据或状态构成。</li>
+<li>测试路径生成:利用上面的规则（三种）生成从初始状态到最后状态的测试路径。</li>
+<li>测试用例合成:合成测试路径与功能图中每个状态中的局部测试用例.结果是初始状态到最后状态的一个状态序列,以及每个状态中输入数据与对应输出数据的组合。</li>
+</ul>
+<h2>错误推测法</h2>
+<h3>1定义</h3>
+<p>错误推测法是: 基于经验和直觉推测程序中所有可能存在的各种错误，从而有针对性的设计测试用例的方法。</p>
+<h3>2基本思想</h3>
+<p>根据经验,列举出程序中所有可能有的错误和容易发生错误的特殊情况,根据他们选择测试用例。</p>
+<h3>3 使用场景</h3>
+<p>适用于项目时间比较短促,任务比较繁重的情况下</p>
+<h1>四、总结：</h1>
+<p><strong>软件测试基本流程：</strong>（分为5个阶段）</p>
+<p><strong>需求分析阶段、测试计划阶段、测试设计阶段、测试执行阶段、评估阶段</strong></p>
+<p><strong>测试用例：</strong>（测试用例八大要素）</p>
+<p>测试用例八大要素</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">测试用例编号</th>
+<th style="text-align: center;">测试项目(测试模块)</th>
+<th style="text-align: center;">预置(前提)条件</th>
+<th style="text-align: center;">测试输入</th>
+<th style="text-align: center;">预期输出</th>
+<th style="text-align: center;">操作步骤</th>
+<th style="text-align: center;">测试用例标题</th>
+<th style="text-align: center;">级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">ST-子项名-01</td>
+<td style="text-align: center;">手机登录</td>
+<td style="text-align: center;">手机正常使用</td>
+<td style="text-align: center;">手机号</td>
+<td style="text-align: center;">正常登录</td>
+<td style="text-align: center;">输入手机号并确认</td>
+<td style="text-align: center;">测试能否手机登录成功</td>
+<td style="text-align: center;">重要</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>一般大型公司都有自己测试用例模板</p>
+<p>（但是这个也得记一下，万一让自己出模板呢）</p>
+</blockquote>
+<p><strong>测试用例设计方法：</strong></p>
+<blockquote>
+<p>等边工场因判正错</p>
+</blockquote>
+<p><img alt="image-20230517141823782" src="imags/image-20230517141823782.png"></p>
+<blockquote>
+<p>这章也是纯纯干货哦，面试也会问到的~</p>
+<p>举例面试题（自测一下）:</p>
+<p>1、你公司的测试流程是什么样的？</p>
+<p>2、测试用例包含哪些内容？</p>
+<p>3、测试用例设计方法你都会哪些？</p>
+<p>4、详细讲一下正交法，你工作中怎么用的？</p>
+<p>...</p>
+</blockquote>
+<p><img alt="9c7bc198b36f77679bc7983f2f02810" src="imags/9c7bc198b36f77679bc7983f2f02810.jpg"></p>
+<!-- /content -->
+      <footer>
+        <p>Posted by <a href="/author/hgx.html">hgx</a> on <time datetime="2023-05-25T20:43:24.672918+02:00">周四 25 五月 2023</time> in <a href="/category/ruan-jian-ce-shi.html">软件测试</a>. <span class="m-label m-success">updated <time datetime="2023-05-25T20:43:24.672918+02:00">周四 25 五月 2023</time></span></p>
+      </footer>
+    </article>
+    <nav class="m-navpanel m-col-m-2">
+      <h3>Categories</h3>
+      <ol class="m-block-bar-m">
+        <li><a href="/category/ruan-jian-ce-shi.html">软件测试</a></li>
+        <li><a href="/category/jing-yan-lei-ji.html">经验累积</a></li>
+        <li><a href="/category/blog.html">blog</a></li>
+      </ol>
+    </nav>
+  </div>
+</div>
+</main>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <dl>
+        <dt>The_toast. Powered by <a href="https://getpelican.com">Pelican</a></dt>
+        <dd>and <a href="https://mcss.mosra.cz">m.css</a>.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
