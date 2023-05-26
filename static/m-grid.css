@@ -24,7 +24,7 @@
 */
 
 /* Important basics */
-*, ::before, ::after { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: border-box;max-width: 100%; }
 body { margin: 0; }
 
 /* 12-column layout. Inspired by Bootstrap and
